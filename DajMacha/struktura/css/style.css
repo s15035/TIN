@@ -6,6 +6,7 @@ html {
 body {
     min-width: 360px;
 }
+
 img {
     max-width: 100%;
     height: auto;
@@ -16,7 +17,6 @@ main,
 footer {
     background-color: white;
 }
-
 
 header,
 main,
