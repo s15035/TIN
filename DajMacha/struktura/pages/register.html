@@ -4,69 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DajMacha</title>
-    <link rel="stylesheet" href="D:\PJATK\VII sem\TIN\pro\TIN\DajMacha\struktura\css\style.css" />
+    <link rel="stylesheet" href="..\css\style.css" />
 </head>
 <body>
     <header>
-        <!-- <h1>DajMacha</h1> -->
-        <img src="D:\PJATK\VII sem\TIN\pro\TIN\DajMacha\struktura\images\dajmacha-baner.png" alt="dymek">
+        <div class="top-banner-menu">
+            <div class="logo-text-menu">
+                <a href="..\index.html">DajMacha.pl</a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="basic-li"><a href="../index.html">Strona główna</a></li>
+                    <li class="basic-li"><a href="product.html">Produkty</a></li>
+                    <li class="basic-li"><a href="contact-form.html">Kontakt</a></li>
+                    <li class="basic-li"><a href="dashboard.html">Dashboard</a></li>
+                    <li class="language-list">
+                        <div>
+                            <select id="language" class="language-list-option">
+                                <option value="PL">PL</option>
+                                <option value="EN">EN</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social-media-button-menu">
+                <a href="https://pl-pl.facebook.com/"><img src="../images/facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/"><img src="../images/instagram.png" alt="instagram"></a>
+                <a href="https://pl.linkedin.com/"><img src="../images/linkedin.png" alt="linkedin"></a>
+                <a href="https://twitter.com/?lang=pl"><img src="../images/twitter.png" alt="twitter"></a>
+            </div>
+            <nav class="nav2-menu">
+                <ul>
+                    <li><a class="a-login" href="login.html">Zaloguj się</a></li>
+                    <li><a class="a-register" href="register.html">Utwórz nowe konto</a></li>
+                    <li><a class="a-cart" href="cart.html"><img src="../images/shopping-bag.png" /> 1</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="D:\PJATK\VII sem\TIN\pro\TIN\DajMacha\struktura\index.html">Strona glowna</a></li>
-            <li><a href="D:\PJATK\VII sem\TIN\pro\TIN\DajMacha\struktura\pages\product.html">Produkty</a></li>
-            <li><a href="D:\PJATK\VII sem\TIN\pro\TIN\DajMacha\struktura\pages\contact-form.html">Kontakt</a></li>
-            <li><a href="D:\PJATK\VII sem\TIN\pro\TIN\DajMacha\struktura\pages\dashboard.html">Dashboard</a></li>
-            <li><a href="D:\PJATK\VII sem\TIN\pro\TIN\DajMacha\struktura\pages\register.html" class="active">Utworz konto</a></li>
-            <li><a href="D:\PJATK\VII sem\TIN\pro\TIN\DajMacha\struktura\pages\login.html">Zaloguj sie</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <h2>Formularz rejestracyjny</h2>
         <form class="form-register">
-            
+            <label class="form-main-label">Formularz rejestracyjny</label>
+
+            <div>
                 <label for="firstName">Imie:<sup>*</sup></label>
-                <input type="text" name="firstName" value="Jan" id="firstName"/>
-            
+                <input type="text" name="firstName" value="Jan" id="firstName" />
+
                 <label for="lastName">Nazwisko:<sup>*</sup></label>
                 <input type="text" name="lastName" value="Kowalski" id="lastName" />
-          
+
                 <label for="tel">Telefon:<sup>*</sup></label>
-                <input type="text" name="tel" id="tel"/>
-          
+                <input type="text" name="tel" id="tel" />
+
                 <label for="email">E-mail:<sup>*</sup></label>
-                <input type="text" name="email" id="firstName"/>
-           
+                <input type="text" name="email" id="firstName" />
+
                 <label for="street">Ulica:<sup>*</sup></label>
                 <input type="text" name="street" id="street" />
-            
+
                 <label for="postcode">Kod pocztowy:<sup>*</sup></label>
-                <input type="text" name="postcode" id="postcode"/>
-          
+                <input type="text" name="postcode" id="postcode" />
+
                 <label for="city">Miasto:<sup>*</sup></label>
-                <input type="text" name="city" id="city"/>
-            
+                <input type="text" name="city" id="city" />
+
                 <label for="login">Nazwa uzytkownika:<sup>*</sup></label>
                 <input type="text" name="login" id="login" />
-            
+
                 <label for="password">Haslo:<sup>*</sup></label>
                 <input type="text" name="password" id="password" />
-           
+
                 <label for="password2">Powtorz haslo:<sup>*</sup></label>
                 <input type="text" name="password2" id="password2" />
-           
-                <input class="form-button-submit" type="submit" value="Utworz konto" />
-                <input class="form-button-clean" type="submit" value="Wyczysc" />
-            
+
+                <input class="form-button-submit" type="submit" value="Utwórz konto" />
+                <input class="form-button-clean" type="submit" value="Wyczyść" />
+
+            </div>
+
         </form>
 
-        
+
     </main>
 
     <footer>
-        Wiktor Wr�bel, s15035
+        <div class="localization-footer">
+            <h2>Gdzie nas znajdziesz...</h2>
+        </div>
+        <div id="google-map-container" class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9774.922814549878!2d21.000812554596006!3d52.23011023997716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8c92692e49%3A0xc2e97ae5311f2dc2!2sPa%C5%82ac%20Kultury%20i%20Nauki!5e0!3m2!1spl!2spl!4v1606653502183!5m2!1spl!2spl" allowfullscreen="true"></iframe>
+        </div>
+        <div class="footer-details">
+            <div class="about-us-footer">
+                <div class="logo-text-menu">
+                    <a href="../index.html">DajMacha.pl</a>
+                </div>
+                <label>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </label>
+            </div>
+            <div class="my-account-footer">
+                <div>
+                    <label>KONTO</label>
+                    <a href="login.html">Zaloguj się</a>
+                    <a href="register.html">Zarejestruj</a>
+                    <a href="cart.html">Koszyk</a>
+                    <a href="order-list.html">Historia zamówień</a>
+                </div>
+            </div>
+            <div class="product-footer">
+                <div>
+                    <label>PRODUKTY</label>
+                    <a href="product.html">Aktualna oferta</a>
+                    <a>Nowości</a>
+                </div>
+            </div>
+            <div class="contact-footer">
+                <div>
+                    <label>POMOC</label>
+                    <a href="contact-form.html">Skontaktuj się z nami</a>
+                    <a>tel. +48 999-888-777</a>
+                    <a>s15035@pjwstk.edu.pl</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
