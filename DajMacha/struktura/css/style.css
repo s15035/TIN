@@ -537,7 +537,9 @@ main {
 
 .form-register div{
     display: grid;
-    grid-template-columns: 180px 300px;
+    grid-template-columns: 180px 300px 1fr;
+    column-gap: 1rem;
+    grid-column: 1 / span 2;
     background-color: #ffffff;
     padding: 1rem;
 }
@@ -799,11 +801,11 @@ main {
     margin-bottom: 50px;
 }
 
-.form-new-product grid {
+.form-new-product div {
     display: grid;
 }
 
-.form-new-product grid input{
+.form-new-product div input{
     border: solid 1px;
     border-radius: 5px;
 }
@@ -830,7 +832,7 @@ main {
 
 .form-add-user {
     display: grid;
-    grid-template-columns: 150px 300px;
+    grid-template-columns: 150px 300px 1fr;
     box-shadow: 1px 1px 5px 5px #ccc;
     margin-bottom: 100px;
     margin-top: 100px;
@@ -841,9 +843,19 @@ main {
 }
 .form-add-user h2{
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     text-align:center;
     margin-bottom: 50px;
+}
+
+.form-add-user div{
+ grid-column-start: 1;
+ grid-column-end: 4;
+}
+
+.form-add-user div p, input{
+    display: flex;
+    justify-content: center;
 }
 
 /*Footer details*/
@@ -1204,7 +1216,7 @@ footer {
         width: auto;
     }
 
-    .form-new-product grid {
+    .form-new-product div {
         display: grid;
         grid-template-columns: 100%;
     }
@@ -1293,4 +1305,21 @@ footer {
         margin-top: 10px;
         justify-content: center;
     }
+}
+
+.errors-text {
+    font-size: 0.85em;
+    line-height: 2.25rem;
+    color: #e74c3c;
+}
+
+.form-register input.error-input,
+.form-register select.error-input,
+.form-login input.error-input,
+.form-login select.error-input,
+.form-add-user input.error-input,
+.form-add-user select.error-input,
+.form-new-product input.error-input,
+.form-new-product select.error-input {
+    border: 2px solid #e74c3c;
 }

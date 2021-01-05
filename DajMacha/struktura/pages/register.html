@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DajMacha</title>
     <link rel="stylesheet" href="..\css\style.css" />
+    <script type="application/javascript" src="..\js\validationCommon.js"></script>
+    <script type="application/javascript" src="..\js\validationRegisterForm.js"></script>
+
 </head>
 <body>
     <header>
@@ -45,49 +48,60 @@
     </header>
 
     <main>
-        <form class="form-register">
-            <label class="form-main-label">Formularz rejestracyjny</label>
 
-            <div>
-                <label for="firstName">Imie:<sup>*</sup></label>
-                <input type="text" name="firstName" value="Jan" id="firstName" />
+            <form class="form-register" novalidate onsubmit="return validateForm()">
+                <label class="form-main-label">Formularz rejestracyjny</label>
+                <div>
+                    <label for="firstName">Imie:<abbr title="required" aria-label="required">*</abbr></label>
+                    <input type="text" name="firstName" id="firstName" placeholder="2-60 do znaków" />
+                    <span id="errorFirstName" class="errors-text"></span>
 
-                <label for="lastName">Nazwisko:<sup>*</sup></label>
-                <input type="text" name="lastName" value="Kowalski" id="lastName" />
+                    <label for="lastName">Nazwisko:<abbr>*</abbr></label>
+                    <input type="text" name="lastName" id="lastName" placeholder="2-60 do znaków" />
+                    <span id="errorLastName" class="errors-text"></span>
 
-                <label for="tel">Telefon:<sup>*</sup></label>
-                <input type="text" name="tel" id="tel" />
+                    <label for="tel">Telefon:<abbr>*</abbr></label>
+                    <input type="text" name="tel" id="tel" placeholder="9 cyfr" />
+                    <span id="errorTel" class="errors-text"></span>
 
-                <label for="email">E-mail:<sup>*</sup></label>
-                <input type="text" name="email" id="firstName" />
+                    <label for="email">E-mail:<abbr>*</abbr></label>
+                    <input type="text" name="email" id="email" placeholder="np. nazwa@domena.pl" />
+                    <span id="errorEmail" class="errors-text"></span>
 
-                <label for="street">Ulica:<sup>*</sup></label>
-                <input type="text" name="street" id="street" />
+                    <label for="street">Ulica:<abbr>*</abbr></label>
+                    <input type="text" name="street" id="street" />
+                    <span id="errorStreet" class="errors-text"></span>
 
-                <label for="postcode">Kod pocztowy:<sup>*</sup></label>
-                <input type="text" name="postcode" id="postcode" />
+                    <label for="postcode">Kod pocztowy:<abbr>*</abbr></label>
+                    <input type="text" name="postcode" id="postcode" placeholder="np. 00-111" />
+                    <span id="errorPostcode" class="errors-text"></span>
 
-                <label for="city">Miasto:<sup>*</sup></label>
-                <input type="text" name="city" id="city" />
+                    <label for="city">Miasto:<abbr>*</abbr></label>
+                    <input type="text" name="city" id="city" />
+                    <span id="errorCity" class="errors-text"></span>
 
-                <label for="login">Nazwa uzytkownika:<sup>*</sup></label>
-                <input type="text" name="login" id="login" />
+                    <label for="login">Nazwa uzytkownika:<abbr>*</abbr></label>
+                    <input type="text" name="login" id="login" />
+                    <span id="errorLogin" class="errors-text"></span>
 
-                <label for="password">Haslo:<sup>*</sup></label>
-                <input type="text" name="password" id="password" />
+                    <label for="password">Haslo:<abbr>*</abbr></label>
+                    <input type="text" name="password" id="password" />
+                    <span id="errorPassword" class="errors-text"></span>
 
-                <label for="password2">Powtorz haslo:<sup>*</sup></label>
-                <input type="text" name="password2" id="password2" />
+                    <label for="password2">Powtorz haslo:<abbr>*</abbr></label>
+                    <input type="text" name="password2" id="password2" />
+                    <span id="errorPassword2" class="errors-text"></span>
 
-                <input class="form-button-submit" type="submit" value="Utwórz konto" />
-                <input class="form-button-clean" type="submit" value="Wyczyść" />
+                    <p id="errorsSummary" class="errors-text"></p>
 
-            </div>
+                    <input class="form-button-submit" type="submit" value="Utwórz konto" id="form-input-submit"/>
 
-        </form>
+                    <input class="form-button-clean" type="submit" value="Wyczyść" />
+                </div>
+            </form>
 
 
-    </main>
+</main>
 
     <footer>
         <div class="localization-footer">

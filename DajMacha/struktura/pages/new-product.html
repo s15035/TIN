@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DajMacha</title>
     <link rel="stylesheet" href="..\css\style.css" />
+    <script type="application/javascript" src="..\js\validationCommon.js"></script>
+    <script type="application/javascript" src="..\js\validationNewProductForm.js"></script>
 </head>
 <body>
     <header>
@@ -45,25 +47,29 @@
     </header>
 
     <main>
-        <form class="form-new-product">
+        <form class="form-new-product" novalidate onsubmit="return validateForm()">
             <h2>Nowy produkt</h2>
 
-            <grid>
-                <label for="productName">Nazwa produktu:<sup>*</sup></label>
+            <div>
+                <label for="productName">Nazwa produktu:<abbr title="required" aria-label="required">*</abbr></label>
                 <input type="text" name="productName" id="productName" />
-            </grid>
+                <span id="errorProductName" class="errors-text"></span>
+            </div>
 
-            <grid>
-                <label for="price">Cena:<sup>*</sup></label>
+            <div>
+                <label for="price">Cena:<abbr title="required" aria-label="required">*</abbr></label>
                 <input type="text" name="price" id="price" />
-            </grid>
+                <span id="errorPrice" class="errors-text"></span>
+            </div>
 
             <label class="new-product-label2" for="img">Zdjęcie:</label>
             <input class="new-product-input1" type="file" id="img" name="img" accept="image/*">
 
-            <label class="new-product-label1" for="description">Opis produktu:<sup>*</sup></label>
+            <label class="new-product-label1" for="description">Opis produktu:<abbr title="required" aria-label="required">*</abbr></label>
             <textarea class="new-product-textarea" type="text" name="description" id="description"></textarea>
+            <span id="errordescription" class="errors-text"></span>
 
+            <p id="errorsSummary" class="errors-text"></p>
             <input class="form-button-submit" type="submit" value="Dodaj" />
         </form>
 

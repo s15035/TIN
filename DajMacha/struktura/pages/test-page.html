@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DajMacha</title>
+    <script type="application/javascript" src="..\js\test2.js"></script>
+    <script type="application/javascript" src="..\js\test.js"></script>
+
+</head>
+<body>
+    <header> 
+    </header>
+
+    <main>
+        <form novalidate onsubmit="return validateForm()">
+            <label for="firstName">Imie:<abbr title="required" aria-label="required">*</abbr></label>
+            <input type="text" name="firstName" id="firstName" placeholder="2-60 do znakow" />
+            <span id="errorFirstName" class="errors-text" style="color: red;"></span>
+            
+            <label for="urodziny">Urodziny:<abbr>*</abbr></label>
+            <input type="number" name="urodziny" id="urodziny" placeholder="1-12" />
+            <span id="errorUrodziny" class="errors-text" style="color: red;"></span>
+
+            <p id="errorsSummary" class="errors-text"></p>
+
+            <input class="buttonSubmit" type="submit" value="Zatwierdz" id="buttonSubmit" />
+        </form>
+      <!--  <script>
+            function sprawdz1() {
+                var imie = document.getElementById("firstName").value;
+                if (imie == "") document.getElementById("errorFirstName").innerHTML = "Podaj imie!!!";
+                else document.getElementById("errorFirstName").innerHTML = "";
+            }
+
+            function sprawdz2() {
+                var urodziny = document.getElementById("urodziny").value;
+                if (urodziny < 1 || urodziny > 12 || isNaN(urodziny)) document.getElementById("errorUrodziny").innerHTML = "Niepoprawny numer miesiaca!!!";
+                else document.getElementById("errorUrodziny").innerHTML = "";
+            }
+        </script>-->
+    </main>
+
+    <footer>
+    </footer>
+
+</body>
+</html>
