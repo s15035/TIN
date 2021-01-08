@@ -1,0 +1,31 @@
+﻿<%- include('../fragments/header.ejs') %>
+
+    <main>
+        <script type="application/javascript" src="js\validationCommon.js"></script>
+        <script type="application/javascript" src="js\validationLoginForm.js"></script>
+
+        <form class="form-login" novalidate onsubmit="return validateForm()">
+            <label class="form-main-label">Strona logowania</label>
+            <div>
+                <label for="login">Nazwa uzytkownika:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="text" name="login" id="login" />
+                <span id="errorLogin" class="errors-text"></span>
+
+                <label for="password">Haslo:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="text" name="password" id="password" />
+                <span id="errorPassword" class="errors-text"></span>
+
+                <p id="errorsSummary" class="errors-text"></p>
+                <input class="form-login-button-submit" type="submit" value="Zaloguj się" />
+
+                <div class="first-time-line">
+                    <div>
+                        <a>Pierwszy raz na DajMacha.pl?</a>
+                        <a href="register.html">Stwórz konto.</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+<%- include('../fragments/footer.ejs') %>

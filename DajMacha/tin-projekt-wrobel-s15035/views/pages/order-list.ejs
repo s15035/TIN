@@ -1,0 +1,510 @@
+﻿<%- include('../fragments/header.ejs') %>
+
+    <main>
+        <h2 class="page-title">Lista zamówień</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>ID zamówienia</th>
+                    <th>Produkt</th>
+                    <th>Ilosc</th>
+                    <th>Cena</th>
+                    <th>Data zamowienia</th>
+                    <th>Data wyslania</th>
+                    <th>ID konta</th>
+                    <th>status</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 1</td>
+                    <td>3</td>
+                    <td>39,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>5</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Produkt 4</td>
+                    <td>1</td>
+                    <td>139,99</td>
+                    <td>18.05.2020</td>
+                    <td>20.05.2020</td>
+                    <td>13</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Produkt 8</td>
+                    <td>2</td>
+                    <td>219,99</td>
+                    <td>15.11.2020</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>w realizacji</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 1</td>
+                    <td>3</td>
+                    <td>39,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>5</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Produkt 4</td>
+                    <td>1</td>
+                    <td>139,99</td>
+                    <td>18.05.2020</td>
+                    <td>20.05.2020</td>
+                    <td>13</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Produkt 8</td>
+                    <td>2</td>
+                    <td>219,99</td>
+                    <td>15.11.2020</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>w realizacji</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 1</td>
+                    <td>3</td>
+                    <td>39,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>5</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Produkt 4</td>
+                    <td>1</td>
+                    <td>139,99</td>
+                    <td>18.05.2020</td>
+                    <td>20.05.2020</td>
+                    <td>13</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Produkt 8</td>
+                    <td>2</td>
+                    <td>219,99</td>
+                    <td>15.11.2020</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>w realizacji</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 1</td>
+                    <td>3</td>
+                    <td>39,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>5</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Produkt 4</td>
+                    <td>1</td>
+                    <td>139,99</td>
+                    <td>18.05.2020</td>
+                    <td>20.05.2020</td>
+                    <td>13</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Produkt 8</td>
+                    <td>2</td>
+                    <td>219,99</td>
+                    <td>15.11.2020</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>w realizacji</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 1</td>
+                    <td>3</td>
+                    <td>39,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>5</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Produkt 4</td>
+                    <td>1</td>
+                    <td>139,99</td>
+                    <td>18.05.2020</td>
+                    <td>20.05.2020</td>
+                    <td>13</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Produkt 8</td>
+                    <td>2</td>
+                    <td>219,99</td>
+                    <td>15.11.2020</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>w realizacji</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 1</td>
+                    <td>3</td>
+                    <td>39,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>5</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Produkt 4</td>
+                    <td>1</td>
+                    <td>139,99</td>
+                    <td>18.05.2020</td>
+                    <td>20.05.2020</td>
+                    <td>13</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Produkt 8</td>
+                    <td>2</td>
+                    <td>219,99</td>
+                    <td>15.11.2020</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>w realizacji</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 1</td>
+                    <td>3</td>
+                    <td>39,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>5</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Produkt 4</td>
+                    <td>1</td>
+                    <td>139,99</td>
+                    <td>18.05.2020</td>
+                    <td>20.05.2020</td>
+                    <td>13</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Produkt 8</td>
+                    <td>2</td>
+                    <td>219,99</td>
+                    <td>15.11.2020</td>
+                    <td></td>
+                    <td>2</td>
+                    <td>w realizacji</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <!-- Tu wstaw dodatkowe wiersze -->
+            </tbody>
+        </table>
+    </main>
+
+<%- include('../fragments/footer.ejs') %>

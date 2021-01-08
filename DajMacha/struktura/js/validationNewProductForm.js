@@ -3,12 +3,12 @@ function validateForm() {
 
 	const productNameInput = document.getElementById('productName');
 	const priceInput = document.getElementById('price');
-	/*const descriptionInput = document.getElementById('description');*/
-
+/*	const descriptionTextarea = document.getElementById('description');
+*/
 	const errorProductName = document.getElementById('errorProductName');
 	const errorPrice = document.getElementById('errorPrice');
-	/*const errorDescription = document.getElementById('errorDescription');*/
-	const errorsSummary = document.getElementById('errorsSummary');
+/*	const errorDescription = document.getElementById('errorDescription');
+*/	const errorsSummary = document.getElementById('errorsSummary');
 
 	resetErrors([productNameInput, priceInput], [errorProductName, errorPrice], errorsSummary);
 
@@ -27,11 +27,12 @@ function validateForm() {
 	}
 
 	/*description*/
-	/*if (!checkRequired(descriptionInput.value)) {
+	/*if (!(trimfield(descriptionTextarea.value) == '')) {
 		valid = false;
-		descriptionInput.classList.add("error-input");
+		descriptionTextarea.classList.add("error-input");
 		errorDescription.innerText = "Pole jest wymagane";
 	}*/
+	
 
 	if (!valid) {
 		errorsSummary.innerText = "Formularz zawiera b³êdy";

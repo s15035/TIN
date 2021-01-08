@@ -473,7 +473,7 @@ main {
 
 .form-contact div {
     display: grid;
-    grid-template-columns: 150px 300px;
+    grid-template-columns: 150px 300px 1fr;
     padding: 1rem;
     margin-top: 20px;
 
@@ -486,9 +486,11 @@ main {
 
 .form-contact div input{
     border: solid 1px;
+    border-radius: 5px;
+
 }
 
-.form-contact div input, textarea{
+.form-contact div textarea{
     border-radius: 5px;
     text-decoration: none;
 }
@@ -838,9 +840,18 @@ main {
     margin-top: 100px;
     padding: 10px;
 }
+
 .form-add-user select {
     margin: 5px;
+    border-radius: 5px;
+    border: solid 1px;
 }
+
+.form-add-user input {
+    border-radius: 5px;
+    border: solid 1px;
+}
+
 .form-add-user h2{
     grid-column-start: 1;
     grid-column-end: 4;
@@ -848,14 +859,16 @@ main {
     margin-bottom: 50px;
 }
 
-.form-add-user div{
- grid-column-start: 1;
- grid-column-end: 4;
+.form-add-user div {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
-.form-add-user div p, input{
-    display: flex;
-    justify-content: center;
+.form-add-user div p,
+.form-add-user div input {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 /*Footer details*/
@@ -1262,7 +1275,7 @@ footer {
     }
 
     .add-to-cart-button {
-        max-width: 180px;;
+        max-width: 180px;
     }
 
 
@@ -1307,7 +1320,7 @@ footer {
     }
 }
 
-.errors-text {
+.errors-text, abbr {
     font-size: 0.85em;
     line-height: 2.25rem;
     color: #e74c3c;
@@ -1320,6 +1333,8 @@ footer {
 .form-add-user input.error-input,
 .form-add-user select.error-input,
 .form-new-product input.error-input,
-.form-new-product select.error-input {
+.form-new-product select.error-input,
+.form-contact input.error-input,
+.form-contact select.error-input {
     border: 2px solid #e74c3c;
 }

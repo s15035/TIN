@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DajMacha</title>
+    <link rel="stylesheet" href="\css\style.css" />
+</head>
+<body>
+    <header>
+        <div class="top-banner-menu">
+            <div class="logo-text-menu">
+                <a href="/">DajMacha.pl</a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="basic-li"><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona g³ówna</a></li>
+                    <li class="basic-li"><a href="/products" class="<%= navLocation == 'product' ? 'active' : ''%>">Produkty</a></li>
+                    <li class="basic-li"><a href="/contact" class="<%= navLocation == 'contact' ? 'active' : ''%>">Kontakt</a></li>
+                    <li class="basic-li"><a href="/dashboard" class="<%= navLocation == 'dashboard' ? 'active' : ''%>">Dashboard</a></li>
+                    <li class="language-list">
+                        <div>
+                            <select id="language" class="language-list-option">
+                                <option value="PL">PL</option>
+                                <option value="EN">EN</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social-media-button-menu">
+                <a href="https://pl-pl.facebook.com/"><img src="/images/facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/"><img src="/images/instagram.png" alt="instagram"></a>
+                <a href="https://pl.linkedin.com/"><img src="/images/linkedin.png" alt="linkedin"></a>
+                <a href="https://twitter.com/?lang=pl"><img src="/images/twitter.png" alt="twitter"></a>
+            </div>
+            <nav class="nav2-menu">
+                <ul>
+                    <li><a class="a-login" href="/login">Zaloguj siê</a></li>
+                    <li><a class="a-register" href="/register">Utwórz nowe konto</a></li>
+                    <li><a class="a-cart" href="/cart"><img src="/images/shopping-bag.png" /> 1</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>

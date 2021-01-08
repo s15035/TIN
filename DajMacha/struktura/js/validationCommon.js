@@ -19,6 +19,11 @@ function checkRequired(value) {
 	return true;
 }
 
+/*function trimfield(value) {
+	return value.replace(/^\s+|\s+$/g, ''); 
+}*/
+
+
 function checkTextLengthRange(value, min, max) {
 	if (!value) {
 		return false;
