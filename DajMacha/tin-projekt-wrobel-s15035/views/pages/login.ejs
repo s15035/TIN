@@ -1,10 +1,10 @@
 ﻿<%- include('../fragments/header.ejs') %>
 
     <main>
-        <script type="application/javascript" src="js\validationCommon.js"></script>
-        <script type="application/javascript" src="js\validationLoginForm.js"></script>
+        <script type="application/javascript" src="..\js\validationCommon.js"></script>
+        <script type="application/javascript" src="..\js\validationLoginForm.js"></script>
 
-        <form class="form-login" novalidate onsubmit="return validateForm()">
+        <form class="form-login" novalidate onsubmit="return validateForm();">
             <label class="form-main-label">Strona logowania</label>
             <div>
                 <label for="login">Nazwa uzytkownika:<abbr title="required" aria-label="required">*</abbr></label>
@@ -28,4 +28,4 @@
         </form>
     </main>
 
-<%- include('../fragments/footer.ejs') %>
+   <%- include('../fragments/footer.ejs') %>

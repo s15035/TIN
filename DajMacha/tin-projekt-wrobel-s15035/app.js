@@ -4,15 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var index = require('./routes/index');
-const userRouter = require('./routes/userRoute');
+const indexRouter = require('./routes/index');
+const webUserRouter = require('./routes/webUserRoute');
+const userOrderRouter = require('./routes/userOrderRoute');
 const productRouter = require('./routes/productRoute');
-const orderRouter = require('./routes/orderRoute');
 const cartRouter = require('./routes/cartRoute');
-const dashboardRouter = require('./routes/dashboardRoute');
-const contactRouter = require('./routes/contactRoute');
-const loginRouter = require('./routes/loginRoute');
-const registerRouter = require('./routes/registerRoute');
+
 var app = express();
 
 // view engine setup
@@ -25,15 +22,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', userRouter);
+app.use('/', indexRouter);
+app.use('/users', webUserRouter);
+app.use('/orders', userOrderRouter);
 app.use('/products', productRouter);
-app.use('/orders', orderRouter);
 app.use('/cart', cartRouter);
-app.use('/dashboard', dashboardRouter);
-app.use('/contact', contactRouter);
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

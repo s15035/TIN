@@ -531,13 +531,15 @@ main {
 
 /*Register form*/
 
-.form-register {
+.form-register,
+.form-order-edit{
     box-shadow: 1px 1px 5px 5px #ccc;
     margin-bottom: 100px;
     margin-top: 100px;
 }
 
-.form-register div{
+.form-register div,
+.form-order-edit div{
     display: grid;
     grid-template-columns: 180px 300px 1fr;
     column-gap: 1rem;
@@ -546,12 +548,16 @@ main {
     padding: 1rem;
 }
 
-.form-register div label, input {
+.form-register div label, 
+.form-register div input,
+.form-order-edit div label,
+.form-order-edit div input{
     margin: 5px;
     padding: 5px;
 }
 
-.form-register div input {
+.form-register div input,
+.form-order-edit div input{
     border: solid 1px;
     border-radius: 5px;
 }
@@ -1333,8 +1339,10 @@ footer {
 .form-add-user input.error-input,
 .form-add-user select.error-input,
 .form-new-product input.error-input,
+.form-new-product textarea.error-input,
 .form-new-product select.error-input,
 .form-contact input.error-input,
+.form-contact textarea.error-input,
 .form-contact select.error-input {
     border: 2px solid #e74c3c;
 }

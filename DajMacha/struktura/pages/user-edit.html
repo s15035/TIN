@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DajMacha</title>
+    <link rel="stylesheet" href="..\css\style.css" />
+ 
+
+</head>
+<body>
+    <header>
+        <div class="top-banner-menu">
+            <div class="logo-text-menu">
+                <a href="..\index.html">DajMacha.pl</a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="basic-li"><a href="../index.html">Strona g³ówna</a></li>
+                    <li class="basic-li"><a href="product.html">Produkty</a></li>
+                    <li class="basic-li"><a href="contact-form.html">Kontakt</a></li>
+                    <li class="basic-li"><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li class="language-list">
+                        <div>
+                            <select id="language" class="language-list-option">
+                                <option value="PL">PL</option>
+                                <option value="EN">EN</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social-media-button-menu">
+                <a href="https://pl-pl.facebook.com/"><img src="../images/facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/"><img src="../images/instagram.png" alt="instagram"></a>
+                <a href="https://pl.linkedin.com/"><img src="../images/linkedin.png" alt="linkedin"></a>
+                <a href="https://twitter.com/?lang=pl"><img src="../images/twitter.png" alt="twitter"></a>
+            </div>
+            <nav class="nav2-menu">
+                <ul>
+                    <li><a class="a-login" href="login.html">Zaloguj siê</a></li>
+                    <li><a class="a-register" href="register.html">Utwórz nowe konto</a></li>
+                    <li><a class="a-cart" href="cart.html"><img src="../images/shopping-bag.png" /> 1</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="page-title">Edycja u¿ytkownika</h2>
+        <form class="form-register" >
+            <label class="form-main-label">Edycja u¿ytkownika</label>
+            <div>
+                <label for="firstName">Imie:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="text" name="firstName" id="firstName" />
+                <span id="errorFirstName" class="errors-text"></span>
+
+                <label for="lastName">Nazwisko:<abbr>*</abbr></label>
+                <input type="text" name="lastName" id="lastName"  />
+                <span id="errorLastName" class="errors-text"></span>
+
+                <label for="tel">Telefon:<abbr>*</abbr></label>
+                <input type="text" name="tel" id="tel"  />
+                <span id="errorTel" class="errors-text"></span>
+
+                <label for="email">E-mail:<abbr>*</abbr></label>
+                <input type="email" name="email" id="email"  />
+                <span id="errorEmail" class="errors-text"></span>
+
+                <label for="street">Ulica:<abbr>*</abbr></label>
+                <input type="text" name="street" id="street"  />
+                <span id="errorStreet" class="errors-text"></span>
+
+                <label for="postcode">Kod pocztowy:<abbr>*</abbr></label>
+                <input type="text" name="postcode" id="postcode"  />
+                <span id="errorPostcode" class="errors-text"></span>
+
+                <label for="city">Miasto:<abbr>*</abbr></label>
+                <input type="text" name="city" id="city"  />
+                <span id="errorCity" class="errors-text"></span>
+
+                <label for="login">Nazwa uzytkownika:<abbr>*</abbr></label>
+                <input type="text" name="login" id="login"  />
+                <span id="errorLogin" class="errors-text"></span>
+
+                <p id="errorsSummary" class="errors-text"></p>
+
+                <input class="form-button-submit" type="submit" value="Edytuj u¿ytkownika" id="form-input-submit" />
+
+                <a class="form-button-clean" value="Wróæ" href="user-list.html"></a>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="localization-footer">
+            <h2>Gdzie nas znajdziesz...</h2>
+        </div>
+        <div id="google-map-container" class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9774.922814549878!2d21.000812554596006!3d52.23011023997716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8c92692e49%3A0xc2e97ae5311f2dc2!2sPa%C5%82ac%20Kultury%20i%20Nauki!5e0!3m2!1spl!2spl!4v1606653502183!5m2!1spl!2spl" allowfullscreen="true"></iframe>
+        </div>
+        <div class="footer-details">
+            <div class="about-us-footer">
+                <div class="logo-text-menu">
+                    <a href="../index.html">DajMacha.pl</a>
+                </div>
+                <label>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </label>
+            </div>
+            <div class="my-account-footer">
+                <div>
+                    <label>KONTO</label>
+                    <a href="login.html">Zaloguj siê</a>
+                    <a href="register.html">Zarejestruj</a>
+                    <a href="cart.html">Koszyk</a>
+                    <a href="order-list.html">Historia zamówieñ</a>
+                </div>
+            </div>
+            <div class="product-footer">
+                <div>
+                    <label>PRODUKTY</label>
+                    <a href="product.html">Aktualna oferta</a>
+                    <a>Nowoœci</a>
+                </div>
+            </div>
+            <div class="contact-footer">
+                <div>
+                    <label>POMOC</label>
+                    <a href="contact-form.html">Skontaktuj siê z nami</a>
+                    <a>tel. +48 999-888-777</a>
+                    <a>s15035@pjwstk.edu.pl</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

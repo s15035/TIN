@@ -1,3 +1,3 @@
-exports.showCart = (req, res, next) => {
-    res.render('pages/cart', { navLocation: 'dashboard'});
+exports.showCartList = (req, res, next) => {
+    res.render('pages/cart', { navLocation: 'dashboard' });
 }

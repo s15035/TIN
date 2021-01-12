@@ -1,0 +1,120 @@
+<%- include('../fragments/header.ejs') %>
+
+    <main>
+        <h2 class="page-title">Szczegó³y zamówienia</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>login</th>
+                    <th>Imie</th>
+                    <th>Nazwisko</th>
+                    <th>Tel.</th>
+                    <th>E-mail</th>
+                    <th>Ulica</th>
+                    <th>Kod pocztowy</th>
+                    <th>Miasto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>xxxJanuszyyy</td>
+                    <td>Janusz</td>
+                    <td>Kowalski</td>
+                    <td>000999111</td>
+                    <td>janusz@example.com</td>
+                    <td>Onomatopejska 199a/23</td>
+                    <td>02-202</td>
+                    <td>Warszawa</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="page-title">Lista produktów</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>ID zamówienia</th>
+                    <th>Produkt</th>
+                    <th>Ilosc</th>
+                    <th>Cena</th>
+                    <th>Data zamowienia</th>
+                    <th>Data wyslania</th>
+                    <th>ID konta</th>
+                    <th>status</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 1</td>
+                    <td>3</td>
+                    <td>39,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>1</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+
+                            <li>
+                                <a class="list-actions-button-edit" href="order-edit.html">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuñ</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 2</td>
+                    <td>3</td>
+                    <td>239,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>1</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+
+                            <li>
+                                <a class="list-actions-button-edit" href="order-edit.html">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuñ</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Produkt 3</td>
+                    <td>3</td>
+                    <td>139,99</td>
+                    <td>12.09.2020</td>
+                    <td>14.09.2020</td>
+                    <td>1</td>
+                    <td>zakonczone</td>
+                    <td>
+                        <ul class="list-actions">
+
+                            <li>
+                                <a class="list-actions-button-edit" href="order-edit.html">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuñ</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <a class="form-button-clean" href="order-list.html">Cofnij</a>
+        </div>
+        
+    </main>
+
+  <%- include('../fragments/footer.ejs') %>

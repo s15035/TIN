@@ -1,8 +1,8 @@
 ﻿<%- include('../fragments/header.ejs') %>
 
     <main>
-        <script type="application/javascript" src="js\validationCommon.js"></script>
-        <script type="application/javascript" src="js\validationNewProductForm.js"></script>
+        <script type="application/javascript" src="..\js\validationCommon.js"></script>
+        <script type="application/javascript" src="..\js\validationNewProductForm.js"></script>
 
         <form class="form-new-product" novalidate onsubmit="return validateForm()">
             <h2>Nowy produkt</h2>
@@ -24,7 +24,7 @@
 
             <label class="new-product-label1" for="description">Opis produktu:<abbr title="required" aria-label="required">*</abbr></label>
             <textarea class="new-product-textarea" type="text" name="description" id="description"></textarea>
-            <span id="errordescription" class="errors-text"></span>
+            <span id="errorDescription" class="errors-text"></span>
 
             <p id="errorsSummary" class="errors-text"></p>
             <input class="form-button-submit" type="submit" value="Dodaj" />
@@ -32,4 +32,4 @@
 
     </main>
 
-<%- include('../fragments/footer.ejs') %>
+   <%- include('../fragments/footer.ejs') %>

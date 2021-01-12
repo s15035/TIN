@@ -1,0 +1,74 @@
+<%- include('../fragments/header.ejs') %>
+
+    <main>
+        <h2 class="page-title">Szczegó³y u¿ytkownika</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>login</th>
+                    <th>Imie</th>
+                    <th>Nazwisko</th>
+                    <th>Tel.</th>
+                    <th>E-mail</th>
+                    <th>Ulica</th>
+                    <th>Kod pocztowy</th>
+                    <th>Miasto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>xxxJanuszyyy</td>
+                    <td>Janusz</td>
+                    <td>Kowalski</td>
+                    <td>000999111</td>
+                    <td>janusz@example.com</td>
+                    <td>Onomatopejska 199a/23</td>
+                    <td>02-202</td>
+                    <td>Warszawa</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="page-title">Edycja zamówienia</h2>
+
+        <form class="form-order-edit">
+            <label class="form-main-label">Formularz rejestracyjny</label>
+            <div>
+                <label for="idOrder">ID zamówienia:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="text" name="idOrder" id="idOrder"  disabled="disabled" />
+                <span id="errorIdOrder" class="errors-text"></span>
+
+                <label for="productAmount">Iloœæ produktów:<abbr>*</abbr></label>
+                <input type="text" name="productAmount" id="productAmount" disabled="disabled" />
+                <span id="errorProductAmount" class="errors-text"></span>
+
+                <label for="orderValue">Wartoœæ zamówienia:<abbr>*</abbr></label>
+                <input type="text" name="orderValue" id="orderValue"  disabled="disabled" />
+                <span id="errorOrderValue" class="errors-text"></span>
+
+                <label for="email">Data zamowienia	:<abbr>*</abbr></label>
+                <input type="email" name="email" id="email"  disabled="disabled" />
+                <span id="errorEmail" class="errors-text"></span>
+
+                <label for="street">Data wyslania:<abbr>*</abbr></label>
+                <input type="text" name="street" id="street" disabled="disabled" />
+                <span id="errorStreet" class="errors-text"></span>
+
+                <label for="role">Status:</label>
+                <select id="role">
+                    <option value="admin">W koszyku</option>
+                    <option value="customer">W realizacji</option>
+                    <option value="menager">Zrealizowane</option>
+                </select>
+
+                <p id="errorsSummary" class="errors-text"></p>
+
+                <input class="form-button-submit" type="submit" value="Edytuj zamówienie" id="form-input-submit" />
+                <a class="form-button-submit" href="order-list.html">Wróc do listy</a>
+            </div>
+        </form>
+
+    </main>
+
+  <%- include('../fragments/footer.ejs') %>

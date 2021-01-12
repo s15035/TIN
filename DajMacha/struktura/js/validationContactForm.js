@@ -1,40 +1,40 @@
 function validateForm() {
 	let valid = true;
 
-	const firstNameInput = document.getElementById('firstName');
-	const lastNameInput = document.getElementById('lastName');
+	const firstnameInput = document.getElementById("firstname");
+	const lastnameInput = document.getElementById('lastname');
 	const emailInput = document.getElementById('email');
-/*	const messageTextarea = document.getElementById('message');
-*/
-	const errorFirstName = document.getElementById('errorFirstName');
-	const errorLastName = document.getElementById('errorLastName');
+	const messageTextarea = document.getElementById('message');
+
+	const errorFirstname = document.getElementById('errorFirstname');
+	const errorLastname = document.getElementById('errorLastname');
 	const errorEmail = document.getElementById('errorEmail');
-/*	const errorMessage = document.getElementById('errorMessage');
-*/
+	const errorMessage = document.getElementById('errorMessage');
+
 	const errorsSummary = document.getElementById('errorsSummary');
 
-	resetErrors([firstNameInput, lastNameInput, emailInput], [errorFirstName, errorLastName, errorEmail], errorsSummary);
+	resetErrors([firstnameInput, lastnameInput, emailInput, messageTextarea], [errorFirstname, errorLastname, errorEmail, errorMessage], errorsSummary);
 
 	/*firstname*/
-	if (!checkRequired(firstNameInput.value)) {
+	if (!checkRequired(firstnameInput.value)) {
 		valid = false;
-		firstNameInput.classList.add("error-input");
-		errorFirstName.innerText = "Pole jest wymagane";
-	} else if (!checkTextLengthRange(firstNameInput.value, 2, 60)) {
+		firstnameInput.classList.add("error-input");
+		errorFirstname.innerText = "Pole jest wymagane";
+	} else if (!checkTextLengthRange(firstnameInput.value, 2, 60)) {
 		valid = false;
-		firstNameInput.classList.add("error-input");
-		errorFirstName.innerText = "Pole powinno zawieraæ od 2 do 60 znaków";
+		firstnameInput.classList.add("error-input");
+		errorFirstname.innerText = "Pole powinno zawieraæ od 2 do 60 znaków";
 	}
 
 	/*lastname*/
-	if (!checkRequired(lastNameInput.value)) {
+	if (!checkRequired(lastnameInput.value)) {
 		valid = false;
-		lastNameInput.classList.add("error-input");
-		errorLastName.innerText = "Pole jest wymagane";
-	} else if (!checkTextLengthRange(lastNameInput.value, 2, 60)) {
+		lastnameInput.classList.add("error-input");
+		errorLastname.innerText = "Pole jest wymagane";
+	} else if (!checkTextLengthRange(lastnameInput.value, 2, 60)) {
 		valid = false;
-		lastNameInput.classList.add("error-input");
-		errorLastName.innerText = "Pole powinno zawieraæ od 2 do 60 znaków";
+		lastnameInput.classList.add("error-input");
+		errorLastname.innerText = "Pole powinno zawieraæ od 2 do 60 znaków";
 	}
 
 	/*email*/
@@ -53,12 +53,16 @@ function validateForm() {
 	}
 
 	/*message*/
-	/*if (!checkRequired(messageTextarea.value)) {
+	if (!checkRequired(messageTextarea.value)) {
 		valid = false;
 		messageTextarea.classList.add("error-input");
 		errorMessage.innerText = "Pole jest wymagane";
+	} else if (!checkTextLengthRange(messageTextarea.value, 5, 500)) {
+		valid = false;
+		messageTextarea.classList.add("error-input");
+		errorMessage.innerText = "Pole powinno zawieraæ od 5 do 500 znaków";
 	}
-*/
+
 	if (!valid) {
 		errorsSummary.innerText = "Formularz zawiera b³êdy";
 	}

@@ -3,14 +3,14 @@ function validateForm() {
 
 	const productNameInput = document.getElementById('productName');
 	const priceInput = document.getElementById('price');
-/*	const descriptionTextarea = document.getElementById('description');
-*/
+	const descriptionTextarea = document.getElementById('description');
+
 	const errorProductName = document.getElementById('errorProductName');
 	const errorPrice = document.getElementById('errorPrice');
-/*	const errorDescription = document.getElementById('errorDescription');
-*/	const errorsSummary = document.getElementById('errorsSummary');
+	const errorDescription = document.getElementById('errorDescription');
+	const errorsSummary = document.getElementById('errorsSummary');
 
-	resetErrors([productNameInput, priceInput], [errorProductName, errorPrice], errorsSummary);
+	resetErrors([productNameInput, priceInput, descriptionTextarea], [errorProductName, errorPrice, errorDescription], errorsSummary);
 
 	/*product name*/
 	if (!checkRequired(productNameInput.value)) {
@@ -27,11 +27,15 @@ function validateForm() {
 	}
 
 	/*description*/
-	/*if (!(trimfield(descriptionTextarea.value) == '')) {
+	if (!checkRequired(descriptionTextarea.value)) {
 		valid = false;
 		descriptionTextarea.classList.add("error-input");
 		errorDescription.innerText = "Pole jest wymagane";
-	}*/
+	} else if (!checkTextLengthRange(descriptionTextarea.value, 10, 500)) {
+		valid = false;
+		descriptionTextarea.classList.add("error-input");
+		errorDescription.innerText = "Pole powinno zawieraæ od 10 do 500 znaków";
+	}
 	
 
 	if (!valid) {
