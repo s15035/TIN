@@ -1,0 +1,41 @@
+﻿<%- include('../../fragments/header.ejs') %>
+
+
+    <main>
+        <form class="form-register" novalidate onsubmit="return validateForm();">
+            <label class="form-main-label">Formularz lekarza</label>
+            <div>
+                <label for="imie">Imie:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="text" name="imie" id="imie" placeholder="2-60 do znaków" />
+                <span id="errorImie" class="errors-text"></span>
+
+                <label for="nazwisko">Nazwisko:<abbr>*</abbr></label>
+                <input type="text" name="nazwisko" id="nazwisko" placeholder="2-60 do znaków" />
+                <span id="errorNazwisko" class="errors-text"></span>
+
+                <label for="specjalizacja">Specjalizacja:<abbr>*</abbr></label>
+                <input type="text" name="specjalizacja" id="specjalizacja" placeholder="5-60 do znaków" />
+                <span id="errorSpecjalizacja" class="errors-text"></span>
+
+                <label for="oddzial">Oddzial:<abbr>*</abbr></label>
+                <input type="text" name="oddzial" id="oddzial" placeholder="2-50 do znaków" />
+                <span id="errorOddzial" class="errors-text"></span>
+
+                <label for="email">Email:<abbr>*</abbr></label>
+                <input type="text" name="email" id="email" placeholder="2-50 do znaków" />
+                <span id="errorEmail" class="errors-text"></span>
+
+                <label for="haslo">Haslo:<abbr>*</abbr></label>
+                <input type="text" name="haslo" id="haslo" placeholder="2-50 do znaków" />
+                <span id="errorHaslo" class="errors-text"></span>
+
+                <p id="errorsSummary" class="errors-text"></p>
+
+                <input class="form-button-submit" type="submit" value="Dodaj lekarza" id="form-input-submit" />
+
+                <input class="form-button-clean" value="Wyczyść" />
+            </div>
+        </form>
+    </main>
+
+  <%- include('../../fragments/footer.ejs') %>

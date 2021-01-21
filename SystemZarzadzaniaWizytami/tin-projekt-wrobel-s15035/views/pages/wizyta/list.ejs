@@ -1,0 +1,81 @@
+﻿<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2 class="page-title">Lista wizyt</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ID pacjent</th>
+                    <th>ID lekarz</th>
+                    <th>Data wizyty</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>12-01-2021</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/appointment/add">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/appointment/add">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete" >Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>12-01-2021</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/appointment/add">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/appointment/add">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete">Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>12-01-2021</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/appointment/add">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/appointment/add">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete">Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- Tu wstaw dodatkowe wiersze -->
+            </tbody>
+        </table>
+        <div>
+            <a class="button-add" href="/appointment/add">Dodaj nowa wizyte</a>
+        </div>
+    </main>
+
+<%- include('../../fragments/footer.ejs') %>

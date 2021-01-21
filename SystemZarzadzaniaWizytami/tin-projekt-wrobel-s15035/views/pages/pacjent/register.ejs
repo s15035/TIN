@@ -1,0 +1,53 @@
+﻿<%- include('../../fragments/header.ejs') %>
+    <script type="application/javascript" src="/js/validationRegisterForm.js"></script>
+
+    <main>
+        <form class="form-register" novalidate onsubmit="return validateForm();">
+            <label class="form-main-label">Formularz rejestracyjny</label>
+            <div>
+                <label for="imie">Imie:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="text" name="imie" id="imie" placeholder="2-60 do znaków" />
+                <span id="errorImie" class="errors-text"></span>
+
+                <label for="nazwisko">Nazwisko:<abbr>*</abbr></label>
+                <input type="text" name="nazwisko" id="nazwisko" placeholder="2-60 do znaków" />
+                <span id="errorNazwisko" class="errors-text"></span>
+
+                <label for="pesel">PESEL<abbr>*</abbr></label>
+                <input type="text" name="pesel" id="pesel" />
+                <span id="errorPesel" class="errors-text"></span>
+
+                <label for="email">E-mail:<abbr>*</abbr></label>
+                <input type="email" name="email" id="email" placeholder="np. nazwa@domena.pl" />
+                <span id="errorEmail" class="errors-text"></span>
+
+                <label for="telefon">Telefon:<abbr>*</abbr></label>
+                <input type="text" name="telefon" id="telefon" placeholder="9 cyfr" />
+                <span id="errorTelefon" class="errors-text"></span>
+
+                <label for="kod_pocztowy">Kod pocztowy:<abbr>*</abbr></label>
+                <input type="text" name="kod_pocztowy" id="kod_pocztowy" placeholder="np. 00-111" />
+                <span id="errorKod_pocztowy" class="errors-text"></span>
+
+                <label for="miasto">Miasto:<abbr>*</abbr></label>
+                <input type="text" name="miasto" id="miasto" />
+                <span id="errorMiasto" class="errors-text"></span>
+
+                <label for="ulica">Ulica:<abbr>*</abbr></label>
+                <input type="text" name="ulica" id="ulica" />
+                <span id="errorUlica" class="errors-text"></span>
+
+                <label for="haslo">Haslo:<abbr>*</abbr></label>
+                <input type="text" name="haslo" id="haslo" />
+                <span id="errorHaslo" class="errors-text"></span>
+
+                <p id="errorsSummary" class="errors-text"></p>
+
+                <input class="form-button-submit" type="submit" value="Utwórz konto" id="form-input-submit" />
+
+                <input class="form-button-clean" value="Wyczyść" />
+            </div>
+        </form>
+    </main>
+
+<%- include('../../fragments/footer.ejs') %>

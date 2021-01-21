@@ -1,0 +1,83 @@
+﻿<%- include('../../fragments/header.ejs') %>
+
+
+    <main>
+        <h2 class="page-title">Lista pacjentow</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imie</th>
+                    <th>Nazwisko</th>
+                    <th>PESEL</th>
+                    <th>telefon</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>jan</td>
+                    <td>Kowalski</td>
+                    <td>97099999993</td>
+                    <td>123123123</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/patient">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/patient">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete">Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>jan</td>
+                    <td>Kowalski</td>
+                    <td>97099999993</td>
+                    <td>123123123</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/patient">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/patient">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete" >Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>jan</td>
+                    <td>Kowalski</td>
+                    <td>97099999993</td>
+                    <td>123123123</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/patient">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/patient">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete">Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- Tu wstaw dodatkowe wiersze -->
+            </tbody>
+        </table>
+    </main>
+
+<%- include('../../fragments/footer.ejs') %>

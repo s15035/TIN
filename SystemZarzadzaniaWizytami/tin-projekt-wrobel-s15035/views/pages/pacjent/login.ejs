@@ -1,0 +1,29 @@
+﻿<%- include('../../fragments/header.ejs') %>
+    <script type="application/javascript" src="/js/validationLoginForm.js"></script>
+
+    <main>
+        <form class="form-login" novalidate onsubmit="return validateForm();">
+            <label class="form-main-label">Strona logowania</label>
+            <div>
+                <label for="email">Adres e-mail:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="email" name="email" id="email" />
+                <span id="errorEmail" class="errors-text"></span>
+
+                <label for="haslo">Haslo:<abbr>*</abbr></label>
+                <input type="text" name="haslo" id="haslo" />
+                <span id="errorHaslo" class="errors-text"></span>
+
+                <p id="errorsSummary" class="errors-text"></p>
+                <input class="form-login-button-submit" type="submit" value="Zaloguj się" />
+
+                <div class="first-time-line">
+                    <div>
+                        <a>Pierwszy raz na portalu pacjenta?</a>
+                        <a href="/patient/register">Stwórz konto.</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+<%- include('../../fragments/footer.ejs') %>

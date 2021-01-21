@@ -1,0 +1,38 @@
+﻿<%- include('../../fragments/header.ejs') %>
+  
+  <script type="application/javascript" src="/js/validationAddWardForm.js"></script>
+
+    <main>
+        <form class="form-register" novalidate onsubmit="return validateForm();">
+            <label class="form-main-label">Formularz wizyty</label>
+            <div>
+                <label for="id_pacjent">ID pacjenta:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="number" name="id_pacjent" id="id_pacjent"  />
+                <span id="errorId_pacjent" class="errors-text"></span>
+
+                <label for="id_lekarz">ID lekarza:<abbr>*</abbr></label>
+                <input type="number" name="id_lekarz" id="id_lekarz"  />
+                <span id="errorId_lekarz" class="errors-text"></span>
+
+                <label for="objawy">Objawy:<abbr>*</abbr></label>
+                <input type="text" name="objawy" id="objawy" />
+                <span id="errorObjawy" class="errors-text"></span>
+
+                <label for="leczenie">Leczenie:<abbr>*</abbr></label>
+                <input type="text" name="leczenie" id="leczenie"  />
+                <span id="errorLeczenie" class="errors-text"></span>
+
+                <label for="data_wizyty">Data wizyty:<abbr>*</abbr></label>
+                <input type="date" name="data_wizyty" id="data_wizyty" />
+                <span id="errorData_wizyty" class="errors-text"></span>
+
+                <p id="errorsSummary" class="errors-text"></p>
+
+                <input class="form-button-submit" type="submit" value="Dodaj wizyte" id="form-input-submit" />
+
+                <input class="form-button-clean" value="Wyczyść" />
+            </div>
+        </form>
+    </main>
+
+<%- include('../../fragments/footer.ejs') %>

@@ -1,0 +1,77 @@
+﻿<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2 class="page-title">Kadra lekarska</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>Imie</th>
+                    <th>Nazwisko</th>
+                    <th>E-mail</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jan</td>
+                    <td>Kowalski</td>
+                    <td>jan.kowalski@acme.com</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/doctor/add">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/doctor/add">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete">Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Witkor</td>
+                    <td>Wróbel</td>
+                    <td>wro.wiktor@acme.com</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/doctor/add">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/doctor/add">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete">Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tomek</td>
+                    <td>Mieliń</td>
+                    <td>tomcio@acme.com</td>
+                    <td>
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="/doctor/add">Szczegoly</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="/doctor/add">Edytuj</a>
+                            </li>
+                            <li>
+                                <button class="list-actions-button-delete">Usun</button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- Tu wstaw dodatkowe wiersze -->
+            </tbody>
+        </table>
+        <div>
+            <a class="button-add" href="/doctor/add">Dodaj nowego lekarza</a>
+        </div>
+    </main>
+
+<%- include('../../fragments/footer.ejs') %>
