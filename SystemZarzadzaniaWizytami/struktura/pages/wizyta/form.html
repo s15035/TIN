@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System zarz�dzania wizytami</title>
+    <link rel="stylesheet" href="..\..\css\style.css" />
+    <script type="application/javascript" src="../../js/validationCommon.js"></script>
+    <script type="application/javascript" src="../../js/validationAddWardForm.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top-banner-menu">
+            <div class="logo-text-menu">
+                <a href="..\..\index.html">System zarz�dzania wizytami</a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="basic-li"><a href="..\..\index.html">Strona g��wna</a></li>
+                    <li class="basic-li"><a href="..\pacjent\list.html">Pacjenci</a></li>
+                    <li class="basic-li"><a href="list.html">Lekarze</a></li>
+                    <li class="basic-li"><a href="..\wizyta\list.html" class="active">Wizyty</a></li>
+                    <li class="language-list">
+                        <div>
+                            <select id="language" class="language-list-option">
+                                <option value="PL">PL</option>
+                                <option value="EN">EN</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social-media-button-menu">
+                <a href="https://pl-pl.facebook.com/"><img src="../images/facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/"><img src="../images/instagram.png" alt="instagram"></a>
+                <a href="https://pl.linkedin.com/"><img src="../images/linkedin.png" alt="linkedin"></a>
+                <a href="https://twitter.com/?lang=pl"><img src="../images/twitter.png" alt="twitter"></a>
+            </div>
+            <nav class="nav2-menu">
+                <ul>
+                    <li><a class="a-login" href="..\pacjent\login.html">Zaloguj si�</a></li>
+                    <li><a class="a-register" href="..\pacjent\register.html">Utw�rz nowe konto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <form class="form-register" novalidate onsubmit="return validateForm();">
+            <label class="form-main-label">Formularz wizyty</label>
+            <div>
+                <label for="id_pacjent">ID pacjenta:<abbr title="required" aria-label="required">*</abbr></label>
+                <input type="number" name="id_pacjent" id="id_pacjent"  />
+                <span id="errorId_pacjent" class="errors-text"></span>
+
+                <label for="id_lekarz">ID lekarza:<abbr>*</abbr></label>
+                <input type="number" name="id_lekarz" id="id_lekarz"  />
+                <span id="errorId_lekarz" class="errors-text"></span>
+
+                <label for="objawy">Objawy:<abbr>*</abbr></label>
+                <input type="text" name="objawy" id="objawy" />
+                <span id="errorObjawy" class="errors-text"></span>
+
+                <label for="leczenie">Leczenie:<abbr>*</abbr></label>
+                <input type="text" name="leczenie" id="leczenie"  />
+                <span id="errorLeczenie" class="errors-text"></span>
+
+                <label for="data_wizyty">Data wizyty:<abbr>*</abbr></label>
+                <input type="date" name="data_wizyty" id="data_wizyty" />
+                <span id="errorData_wizyty" class="errors-text"></span>
+
+                <p id="errorsSummary" class="errors-text"></p>
+
+                <input class="form-button-submit" type="submit" value="Dodaj wizyte" id="form-input-submit" />
+
+                <input class="form-button-clean" value="Wyczyść" />
+            </div>
+        </form>
+    </main>
+
+    <footer>
+
+        <div class="footer-details">
+            <div class="about-us-footer">
+                <div class="logo-text-menu">
+                    <a href="index.html">System zarz�dzania wizytami</a>
+                </div>
+                <label>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </label>
+            </div>
+            <div class="my-account-footer">
+                <div>
+                    <label>PACJENT</label>
+                    <a href="..\pacjent\login.html">Zaloguj si�</a>
+                    <a href="..\pacjent\register.html">Zarejestruj</a>
+                    <a href="..\pacjent\details.html">Dane osobowe</a>
+                    <a href="..\wizyta\details.html">Szczeg�y wizyty</a>
+                </div>
+            </div>
+            <div class="product-footer">
+                <div>
+                    <label>LEKARZ</label>
+                    <a href="login.html">Zaloguj si�</a>
+                    <a href="list.html">Kadra</a>
+                </div>
+            </div>
+            <div class="contact-footer">
+                <div>
+                    <label>POMOC</label>
+                    <label>Skontaktuj si� z nami</label>
+                    <a>tel. +48 999-888-777</a>
+                    <a>s15035@pjwstk.edu.pl</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
