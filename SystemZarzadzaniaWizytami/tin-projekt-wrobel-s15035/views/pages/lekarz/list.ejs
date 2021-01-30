@@ -12,61 +12,26 @@
                 </tr>
             </thead>
             <tbody>
+            <% for (let lekarz of lekarze) { %>
                 <tr>
-                    <td>Jan</td>
-                    <td>Kowalski</td>
-                    <td>jan.kowalski@acme.com</td>
+                    <td><%= lekarz.imie %></td>
+                    <td><%= lekarz.nazwisko %></td>
+                    <td><%= lekarz.email %></td>
                     <td>
                         <ul class="list-actions">
                             <li>
-                                <a class="list-actions-button-details" href="/doctor/add">Szczegoly</a>
+                                <a class="list-actions-button-details" href="/doctor/details/<%=lekarz.id_lekarz%>">Szczegoly</a>
                             </li>
                             <li>
-                                <a class="list-actions-button-edit" href="/doctor/add">Edytuj</a>
+                                <a class="list-actions-button-edit" href="/doctor/edit/<%=lekarz.id_lekarz%>">Edytuj</a>
                             </li>
                             <li>
-                                <button class="list-actions-button-delete">Usun</button>
+                                <a class="list-actions-button-delete" href="/doctor/delete/<%=lekarz.id_lekarz%>">Usun</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
-                <tr>
-                    <td>Witkor</td>
-                    <td>Wróbel</td>
-                    <td>wro.wiktor@acme.com</td>
-                    <td>
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/doctor/add">Szczegoly</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="/doctor/add">Edytuj</a>
-                            </li>
-                            <li>
-                                <button class="list-actions-button-delete">Usun</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Tomek</td>
-                    <td>Mieliń</td>
-                    <td>tomcio@acme.com</td>
-                    <td>
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/doctor/add">Szczegoly</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="/doctor/add">Edytuj</a>
-                            </li>
-                            <li>
-                                <button class="list-actions-button-delete">Usun</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <!-- Tu wstaw dodatkowe wiersze -->
+            <% } %>
             </tbody>
         </table>
         <div>

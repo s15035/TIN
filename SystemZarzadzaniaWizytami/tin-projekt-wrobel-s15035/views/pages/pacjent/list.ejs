@@ -15,69 +15,33 @@
                 </tr>
             </thead>
             <tbody>
+            <% for (let pacjent of pacjenci) { %>
                 <tr>
-                    <td>1</td>
-                    <td>jan</td>
-                    <td>Kowalski</td>
-                    <td>97099999993</td>
-                    <td>123123123</td>
+                    <td><%= pacjent.id_pacjent %></td>
+                    <td><%= pacjent.imie %></td>
+                    <td><%= pacjent.nazwisko %></td>
+                    <td><%= pacjent.pesel %></td>
+                    <td><%= pacjent.telefon %></td>
                     <td>
                         <ul class="list-actions">
                             <li>
-                                <a class="list-actions-button-details" href="/patient">Szczegoly</a>
+                                <a class="list-actions-button-details" href="/patient/details/<%=pacjent.id_pacjent%>">Szczegoly</a>
                             </li>
                             <li>
-                                <a class="list-actions-button-edit" href="/patient">Edytuj</a>
+                                <a class="list-actions-button-edit" href="/patient/edit/<%=pacjent.id_pacjent%>">Edytuj</a>
                             </li>
                             <li>
-                                <button class="list-actions-button-delete">Usun</button>
+                                <a class="list-actions-button-delete" href="/patient/delete/<%=pacjent.id_pacjent%>">Usun</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>jan</td>
-                    <td>Kowalski</td>
-                    <td>97099999993</td>
-                    <td>123123123</td>
-                    <td>
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/patient">Szczegoly</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="/patient">Edytuj</a>
-                            </li>
-                            <li>
-                                <button class="list-actions-button-delete" >Usun</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>jan</td>
-                    <td>Kowalski</td>
-                    <td>97099999993</td>
-                    <td>123123123</td>
-                    <td>
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/patient">Szczegoly</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="/patient">Edytuj</a>
-                            </li>
-                            <li>
-                                <button class="list-actions-button-delete">Usun</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <!-- Tu wstaw dodatkowe wiersze -->
+            <% } %>
             </tbody>
         </table>
+        <div>
+            <a class="button-add" href="/patient/add">Dodaj nowego pacjenta</a>
+        </div>
     </main>
 
 <%- include('../../fragments/footer.ejs') %>

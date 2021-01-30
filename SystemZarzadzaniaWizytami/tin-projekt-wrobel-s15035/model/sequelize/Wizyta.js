@@ -25,7 +25,7 @@ const Wizyta = sequelize.define('Wizyta', {
         allowNull: false,
     },
     data_wizyty: {
-        type: Sequelize.DATEONLY,
+        type: Sequelize.DATE,
         allowNull: false,
     }
 });

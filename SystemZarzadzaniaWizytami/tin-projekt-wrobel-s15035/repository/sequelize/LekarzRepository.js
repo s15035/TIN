@@ -6,11 +6,27 @@ exports.getLekarz = () => {
     return Lekarz.findAll();
 };
 
+/*
 exports.getLekarzById = (lekarzId) => {
     return Lekarz.findByPk(lekarzId);
+};*/
+
+exports.getLekarzById = (lekarzId) => {
+    return Lekarz.findByPk(lekarzId,
+        {
+            include: [{
+                model: Wizyta,
+                as: 'wizyta',
+                include: [{
+                    model: Pacjent,
+                    as: 'pacjent'
+                }]
+            }]
+        });
 };
 
 exports.createLekarz = (newLekarzData) => {
+    const vRes = lekarzSchema.validate(newLekarzData, { abortEarly: false} );
     return Lekarz.create({
         imie: newLekarzData.imie,
         nazwisko: newLekarzData.nazwisko,
@@ -28,6 +44,7 @@ exports.updateLekarz = (lekarzId, lekarzData) => {
     const oddzial = lekarzData.oddzial;
     const email = lekarzData.email;
     const haslo = lekarzData.haslo;
+
     return Lekarz.update(lekarzData, { where: { id_lekarz: lekarzId } });
 };
 

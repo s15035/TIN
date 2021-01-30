@@ -9,6 +9,10 @@ const lekarzRouter = require('./routes/lekarzRoute');
 const pacjentRouter = require('./routes/pacjentRoute');
 const wizytaRouter = require('./routes/wizytaRoute');
 
+const lekarzApiRouter = require('./routes/api/LekarzApiRoute');
+const pacjentApiRouter = require('./routes/api/PacjentApiRoute');
+
+
 var app = express();
 
 // view engine setup
@@ -25,6 +29,10 @@ app.use('/', indexRouter);
 app.use('/doctor', lekarzRouter);
 app.use('/patient', pacjentRouter);
 app.use('/appointment', wizytaRouter);
+
+app.use('/api/doctor', lekarzApiRouter);
+app.use('/api/patient', pacjentApiRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

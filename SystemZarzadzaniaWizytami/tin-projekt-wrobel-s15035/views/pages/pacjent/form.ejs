@@ -3,52 +3,100 @@
     <script type="application/javascript" src="/js/validationRegisterForm.js"></script>
 
     <main>
-        <form class="form-register" novalidate onsubmit="return validateForm();">
-            <label class="form-main-label">Formularz pacjenta</label>
+        <form class="form-register" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
+            <label class="form-main-label"><%= pageTitle %></label>
+            <input type="hidden" name="id_pacjent" value="<%= pacjent.id_pacjent %>">
             <div>
                 <label for="imie">Imie:<abbr title="required" aria-label="required">*</abbr></label>
-                <input type="text" name="imie" id="imie" placeholder="2-60 do znaków" />
+                <input type="text" name="imie" id="imie" placeholder="2-60 do znaków" value="<%= pacjent.imie %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorImie" class="errors-text"></span>
 
                 <label for="nazwisko">Nazwisko:<abbr>*</abbr></label>
-                <input type="text" name="nazwisko" id="nazwisko" placeholder="2-60 do znaków" />
+                <input type="text" name="nazwisko" id="nazwisko" placeholder="2-60 do znaków" value="<%= pacjent.nazwisko %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorNazwisko" class="errors-text"></span>
 
                 <label for="pesel">PESEL<abbr>*</abbr></label>
-                <input type="text" name="pesel" id="pesel" />
+                <input type="text" name="pesel" id="pesel" value="<%= pacjent.pesel %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorPesel" class="errors-text"></span>
 
                 <label for="email">E-mail:<abbr>*</abbr></label>
-                <input type="email" name="email" id="email" placeholder="np. nazwa@domena.pl" />
+                <input type="email" name="email" id="email" placeholder="np. nazwa@domena.pl" value="<%= pacjent.email %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorEmail" class="errors-text"></span>
 
                 <label for="telefon">Telefon:<abbr>*</abbr></label>
-                <input type="text" name="telefon" id="telefon" placeholder="9 cyfr" />
+                <input type="text" name="telefon" id="telefon" placeholder="9 cyfr" value="<%= pacjent.telefon %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorTelefon" class="errors-text"></span>
 
                 <label for="kod_pocztowy">Kod pocztowy:<abbr>*</abbr></label>
-                <input type="text" name="kod_pocztowy" id="kod_pocztowy" placeholder="np. 00-111" />
+                <input type="text" name="kod_pocztowy" id="kod_pocztowy" placeholder="np. 00-111" value="<%= pacjent.kod_pocztowy %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorKod_pocztowy" class="errors-text"></span>
 
                 <label for="miasto">Miasto:<abbr>*</abbr></label>
-                <input type="text" name="miasto" id="miasto" />
+                <input type="text" name="miasto" id="miasto" value="<%= pacjent.miasto %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorMiasto" class="errors-text"></span>
 
                 <label for="ulica">Ulica:<abbr>*</abbr></label>
-                <input type="text" name="ulica" id="ulica" />
+                <input type="text" name="ulica" id="ulica" value="<%= pacjent.ulica %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorUlica" class="errors-text"></span>
 
                 <label for="haslo">Haslo:<abbr>*</abbr></label>
-                <input type="text" name="haslo" id="haslo" />
+                <input type="text" name="haslo" id="haslo" value="<%= pacjent.haslo %>"
+  <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
                 <span id="errorHaslo" class="errors-text"></span>
 
                 <p id="errorsSummary" class="errors-text"></p>
 
-                <input class="form-button-submit" type="submit" value="Utwórz konto" id="form-input-submit" />
-
-                <input class="form-button-clean" value="Wyczyść" />
+                <% if (formMode == 'showDetails') { %>
+                    <a class="form-button-submit" href="/patient/edit/<%= pacjent.id_pacjent %>">Edytuj</a>
+                <% } %>
             </div>
+
+            <div class="form-buttons">
+                <p id="errorsSummary" class="errors-text"></p>
+                <% if (formMode != 'showDetails') { %>
+                    <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+                    <a class="form-button-clean" href="/patient">Anuluj</a>
+                <% } else { %>
+                    <a class="form-button-clean" href="/patient">Powrót</a>
+                <% } %>
+            </div>
+
         </form>
+
+    <% if (formMode == 'showDetails') { %>
+
+        <h2>
+                       Szczegóły pacjenta
+                   </h2>
+                   <table class="table-list">
+                       <thead>
+                       <tr>
+                           <th>Pacjent</th>
+                           <th>Pacjent</th>
+                           <th>Pacjent</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+
+
+                               <tr>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                               </tr>
+
+
+                           </tbody>
+                   </table>
+    <% } %>
     </main>
 
 <%- include('../../fragments/footer.ejs') %>

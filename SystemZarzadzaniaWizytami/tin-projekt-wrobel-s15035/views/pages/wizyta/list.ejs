@@ -5,72 +5,39 @@
         <table class="table-list">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>ID pacjent</th>
-                    <th>ID lekarz</th>
+                    <th>ID wizyta</th>                  
+                    <th>leczenie</th>
+                    <th>objawy</th>
                     <th>Data wizyty</th>
                     <th>Akcje</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>12-01-2021</td>
+            <% for (let wizyta of wizyty) { %>
+
+            <tr>
+
+
+                <td><%= wizyta.id_wizyta %></td>
+                <td><%= wizyta.leczenie %></td>
+                <td><%= wizyta.objawy %></td>
+                <td><%= wizyta.data_wizyty %></td>
                     <td>
                         <ul class="list-actions">
                             <li>
-                                <a class="list-actions-button-details" href="/appointment/add">Szczegoly</a>
+                                <a class="list-actions-button-details" href="/appointment/details/<%= wizyta.id_wizyta %>">Szczegoly</a>
                             </li>
                             <li>
-                                <a class="list-actions-button-edit" href="/appointment/add">Edytuj</a>
+                                <a class="list-actions-button-edit" href="/appointment/edit/<%= wizyta.id_wizyta %>">Edytuj</a>
                             </li>
                             <li>
-                                <button class="list-actions-button-delete" >Usun</button>
+                                <a class="list-actions-button-delete" href="/appointment/delete/<%= wizyta.id_wizyta %>">Usun</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>12-01-2021</td>
-                    <td>
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/appointment/add">Szczegoly</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="/appointment/add">Edytuj</a>
-                            </li>
-                            <li>
-                                <button class="list-actions-button-delete">Usun</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>12-01-2021</td>
-                    <td>
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/appointment/add">Szczegoly</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="/appointment/add">Edytuj</a>
-                            </li>
-                            <li>
-                                <button class="list-actions-button-delete">Usun</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <!-- Tu wstaw dodatkowe wiersze -->
+            <% } %>
+
             </tbody>
         </table>
         <div>

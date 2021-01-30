@@ -3,34 +3,98 @@
   <script type="application/javascript" src="/js/validationAddWardForm.js"></script>
 
     <main>
-        <form class="form-register" novalidate onsubmit="return validateForm();">
-            <label class="form-main-label">Formularz wizyty</label>
+        <form class="form-register" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
+            <label class="form-main-label"><%= pageTitle %></label>
+            <input type="hidden" name="id_wizyta" value="<%= wizyta.id_wizyta %>">
             <div>
                 <label for="id_pacjent">ID pacjenta:<abbr title="required" aria-label="required">*</abbr></label>
-                <input type="number" name="id_pacjent" id="id_pacjent"  />
-                <span id="errorId_pacjent" class="errors-text"></span>
+                <select id="id_pacjent" name="id_pacjent" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> class="<%= validationErrors.find(e => e.path.includes('id_pacjent')) ? 'error-input' : '' %>" >
+                    <% if (formMode ==  'showDetails' || formMode ==  'edit') { %>
+                        <option label="<%= wizyta.pacjent.imie %>"></option>
+                        <% if (formMode ==  'edit'){ %>
+                            <% for (let i=0; i<allPacjent.length; i++) { let pacjent = allPacjent[i]; %>
+                            <option value="<%= pacjent.id_pacjent %>" label="<%= pacjent.imie %>"
+                                    <%= (wizyta.id_pacjent && pacjent.id_pacjent.toString() == wizyta.pacjent.id_pacjent.toString()) ? 'selected' : ''%>></option>
+                        <% }} %>
+                    <% } else{%>
+                        <option value="" selected>--- Wybierz pacjenta ---</option>
+                        <% for (let i=0; i<allPacjent.length; i++) { let pacjent = allPacjent[i]; %>
+                        <option value="<%= pacjent.id_pacjent %>" label="<%= pacjent.imie %>"
+                                <%= (wizyta.id_pacjent && pacjent.id_pacjent.toString() == wizyta.pacjent.id_pacjent.toString()) ? 'selected' : ''%>></option>
+                    <% }} %>
+                </select>
+                <span id="errorId_pacjent" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('id_pacjent'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('id_pacjent')).message %>
+                    <% } %>
+                </span>
 
                 <label for="id_lekarz">ID lekarza:<abbr>*</abbr></label>
-                <input type="number" name="id_lekarz" id="id_lekarz"  />
-                <span id="errorId_lekarz" class="errors-text"></span>
+                <select id="id_lekarz" name="id_lekarz" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> class="<%= validationErrors.find(e => e.path.includes('id_lekarz')) ? 'error-input' : '' %>" >
+                    <% if (formMode ==  'showDetails' || formMode ==  'edit') { %>
+                        <option label="<%= wizyta.lekarz.imie %>"></option>
+                        <% if (formMode ==  'edit'){ %>
+                            <% for (let i=0; i<allLekarz.length; i++) { let lekarz = allLekarz[i]; %>
+                            <option value="<%= lekarz.id_lekarz %>" label="<%= lekarz.imie %>"
+                                    <%= (wizyta.id_lekarz && lekarz.id_lekarz.toString() == wizyta.lekarz.id_lekarz.toString()) ? 'selected' : ''%>></option>
+                        <% }} %>
+                    <% } else{%>
+                        <option value="" selected>--- Wybierz lekarza ---</option>
+                        <% for (let i=0; i<allLekarz.length; i++) { let lekarz = allLekarz[i]; %>
+                        <option value="<%= lekarz.id_lekarz %>" label="<%= lekarz.imie %>"
+                                <%= (wizyta.id_lekarz && lekarz.id_lekarz.toString() == wizyta.lekarz.id_lekarz.toString()) ? 'selected' : ''%>></option>
+                    <% }} %>
+                </select>
+                <span id="errorId_lekarz" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('id_lekarz'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('id_lekarz')).message %>
+                    <% } %>
+                </span>
 
                 <label for="objawy">Objawy:<abbr>*</abbr></label>
-                <input type="text" name="objawy" id="objawy" />
-                <span id="errorObjawy" class="errors-text"></span>
+                <input type="text" name="objawy" id="objawy" value="<%= wizyta.objawy %>"
+                        <%= (formMode == 'showDetails') ? 'disabled' : '' %> class="<%= validationErrors.find(e => e.path.includes('objawy')) ? 'error-input' : '' %>"/>
+                <span id="errorObjawy" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('objawy'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('objawy')).message %>
+                    <% } %>
+                </span>
 
                 <label for="leczenie">Leczenie:<abbr>*</abbr></label>
-                <input type="text" name="leczenie" id="leczenie"  />
-                <span id="errorLeczenie" class="errors-text"></span>
+                <input type="text" name="leczenie" id="leczenie" value="<%= wizyta.leczenie %>"
+                        <%= (formMode == 'showDetails') ? 'disabled' : '' %> class="<%= validationErrors.find(e => e.path.includes('leczenie')) ? 'error-input' : '' %>"/>
+                <span id="errorLeczenie" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('leczenie'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('leczenie')).message %>
+                    <% } %>
+                </span>
 
                 <label for="data_wizyty">Data wizyty:<abbr>*</abbr></label>
-                <input type="date" name="data_wizyty" id="data_wizyty" />
-                <span id="errorData_wizyty" class="errors-text"></span>
+                <input type="date" name="data_wizyty" id="data_wizyty" value="<%= wizyta.data_wizyty %>"
+                        <%= (formMode == 'showDetails') ? 'disabled' : '' %> class="<%= validationErrors.find(e => e.path.includes('data_wizyty')) ? 'error-input' : '' %>"/>
+                <span id="errorData_wizyty" class="errors-text">
+                    <% if (validationErrors.find(e => e.path.includes('data_wizyty'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('data_wizyty')).message %>
+                    <% } %>
+                </span>
 
                 <p id="errorsSummary" class="errors-text"></p>
 
-                <input class="form-button-submit" type="submit" value="Dodaj wizyte" id="form-input-submit" />
+                <% if (formMode == 'showDetails') { %>
+                    <div class="form-buttons-submit">
+                        <a href="/appointment/edit/<%= wizyta.id_wizyta %>" >Edytuj</a>
+                    </div>
+                <% } %>
 
-                <input class="form-button-clean" value="Wyczyść" />
+                <div class="form-buttons">
+                    <p id="errorsSummary" class="errors-text"></p>
+                    <% if (formMode != 'showDetails') { %>
+                        <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+                        <a class="form-button-clean" href="/appointment">Anuluj</a>
+                    <% } else { %>
+                        <a class="form-button-clean" href="/appointment">Powrót</a>
+                    <% } %>
+                </div>
             </div>
         </form>
     </main>

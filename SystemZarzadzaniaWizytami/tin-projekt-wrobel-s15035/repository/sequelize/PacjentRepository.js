@@ -7,10 +7,21 @@ exports.getPacjent = () => {
 };
 
 exports.getPacjentById = (pacjentId) => {
-    return Pacjent.findByPk(pacjentId);
+    return Pacjent.findByPk(pacjentId,
+        {
+            include: [{
+                model: Wizyta,
+                as: 'wizyta',
+                include: [{
+                    model: Lekarz,
+                    as: 'lekarz'
+                }]
+            }]
+        });
 };
 
 exports.createPacjent = (newPacjentData) => {
+    const vRes = pacjentSchema.validate(newPacjentData, { abortEarly: false} );
     return Pacjent.create({
         imie: newPacjentData.imie,
         nazwisko: newPacjentData.nazwisko,
@@ -34,6 +45,7 @@ exports.updatePacjent = (pacjentId, pacjentData) => {
     const miasto = pacjentData.oddzial;
     const ulica = pacjentData.email;
     const haslo = pacjentData.haslo;
+
     return Pacjent.update(pacjentData, { where: { id_pacjent: pacjentId } });
 };
 

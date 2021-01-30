@@ -2,9 +2,10 @@ const Lekarz = require("../../model/sequelize/Lekarz");
 const Pacjent = require("../../model/sequelize/Pacjent");
 const Wizyta = require("../../model/sequelize/Wizyta");
 
+const Sequelize = require('sequelize');
+
 exports.getWizyta = () => {
-    return Wizyta.findAll({
-        include: [
+    return Wizyta.findAll({include: [
             {
                 model: Lekarz,
                 as: 'lekarz'
@@ -17,8 +18,7 @@ exports.getWizyta = () => {
 };
 
 exports.getWizytaById = (wizytaId) => {
-    return Wizyta.findByPk(wizytaId, {
-        include: [
+    return Wizyta.findByPk(wizytaId, {include: [
             {
                 model: Lekarz,
                 as: 'lekarz'
@@ -31,7 +31,6 @@ exports.getWizytaById = (wizytaId) => {
 };
 
 exports.createWizyta = (data) => {
-    console.log(JSON.stringify(data));
 
     return Wizyta.create({
         id_lekarz: data.id_lekarz,
@@ -43,12 +42,16 @@ exports.createWizyta = (data) => {
 };
 
 exports.updateWizyta = (wizytaId, data) => {
-    return Wizyta.update(data, { where: { id_wizyta: wizytaId } });
+    return Wizyta.update(data, { where: { id_wizyta: wizytaId }
+    });
 }
 
 exports.deleteWizyta = (wizytaId) => {
     return Wizyta.destroy({
         where: { id_wizyta: wizytaId }
     });
+};
 
-}; 
+exports.deleteManyWizyta= (wizytaIds) => {
+    return Wizyta.find({ id_wizyta: { [Sequelize.Op.in]: wizytaIds }})
+}
