@@ -86,7 +86,7 @@ exports.registerPacjent = (req, res, next) => {
                 btnLabel: 'Utworz konto',
                 formAction: '/patient/register',
                 navLocation: 'pacjent',
-                validationErrors: err.details
+                validationErrors: err.errors
             });
         });
 };
@@ -105,7 +105,7 @@ exports.addPacjent = (req, res, next) => {
                 btnLabel: 'Dodaj pacjenta',
                 formAction: '/patient/add',
                 navLocation: 'pacjent',
-                validationErrors: err.details
+                validationErrors: err.errors
             });
         });
 };
@@ -126,7 +126,7 @@ exports.updatePacjent = (req, res, next) => {
                 btnLabel: 'Edytuj pacjenta',
                 formAction: '/patient/edit',
                 navLocation: 'pacjent',
-                validationErrors: err.details
+                validationErrors: err.errors
             });
         });
 };

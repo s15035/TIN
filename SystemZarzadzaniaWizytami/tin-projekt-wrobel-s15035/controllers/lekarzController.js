@@ -74,7 +74,7 @@ exports.addLekarz = (req, res, next) => {
                 btnLabel: 'Dodaj lekarza',
                 formAction: '/doctor/add',
                 navLocation: 'lekarz',
-                validationErrors: err.details
+                validationErrors: err.errors
             });
         });
 };
@@ -94,7 +94,7 @@ exports.updateLekarz = (req, res, next) => {
                 btnLabel: 'Edytuj lekarza',
                 formAction: '/doctor/edit',
                 navLocation: 'lekarz',
-                validationErrors: err.details
+                validationErrors: err.errors
             });
         });
 };
@@ -106,3 +106,4 @@ exports.deleteLekarz = (req, res, next) => {
             res.redirect('/doctor');
         });
 };
+

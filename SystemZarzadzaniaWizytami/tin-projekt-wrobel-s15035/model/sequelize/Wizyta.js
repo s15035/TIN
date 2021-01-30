@@ -10,23 +10,42 @@ const Wizyta = sequelize.define('Wizyta', {
     },
     id_pacjent: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
     },
     id_lekarz: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
     },
     objawy: {
         type: Sequelize.TEXT,
         allowNull: false,
+        validate:{
+            notEmpty:{
+                msg: "Pole jest wymagane"
+            },
+        }
     },
     leczenie: {
         type: Sequelize.TEXT,
         allowNull: false,
+        validate:{
+            notEmpty:{
+                msg: "Pole jest wymagane"
+            },
+            len: {
+                args: [10,1000],
+                msg: "Polew powinno zawieraæ od 10 do 1000 znaków"
+            },
+        }
     },
     data_wizyty: {
         type: Sequelize.DATE,
         allowNull: false,
+        validate:{
+            notEmpty:{
+                msg: "Pole jest wymagane"
+            },
+        }
     }
 });
 
