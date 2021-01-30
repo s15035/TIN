@@ -114,8 +114,8 @@ exports.addWizyta = (req, res, next) => {
     });
 };
 
-/*exports.updateWizyta = (req, res, next) => {
-    const wizytaId = req.body.id_wyta;
+exports.updateWizyta = (req, res, next) => {
+    const wizytaId = req.body.id_wizyta;
     const wizytaData = { ...req.body };
     WizytaRepository.updateWizyta(wizytaId, wizytaData)
         .then(result => {
@@ -131,7 +131,7 @@ exports.addWizyta = (req, res, next) => {
                 validationErrors: err.errors
             });
         });
-};*/
+};
 
 exports.deleteWizyta = (req, res, next) => {
     const wizytaId = req.params.wizId;

@@ -26,7 +26,6 @@ exports.getLekarzById = (lekarzId) => {
 };
 
 exports.createLekarz = (newLekarzData) => {
-    const vRes = lekarzSchema.validate(newLekarzData, { abortEarly: false} );
     return Lekarz.create({
         imie: newLekarzData.imie,
         nazwisko: newLekarzData.nazwisko,

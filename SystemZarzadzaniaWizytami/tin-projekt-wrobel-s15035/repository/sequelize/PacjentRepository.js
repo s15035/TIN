@@ -21,7 +21,6 @@ exports.getPacjentById = (pacjentId) => {
 };
 
 exports.createPacjent = (newPacjentData) => {
-    const vRes = pacjentSchema.validate(newPacjentData, { abortEarly: false} );
     return Pacjent.create({
         imie: newPacjentData.imie,
         nazwisko: newPacjentData.nazwisko,
@@ -36,9 +35,9 @@ exports.createPacjent = (newPacjentData) => {
 };
 
 exports.updatePacjent = (pacjentId, pacjentData) => {
-   /* const imie = pacjentData.imie;
+    const imie = pacjentData.imie;
     const nazwisko = pacjentData.nazwisko;
-    const pesel = pacjentData.specjalizacja; */
+    const pesel = pacjentData.specjalizacja;
     const email = pacjentData.oddzial;
     const telefon = pacjentData.email;
     const kod_pocztowy = pacjentData.haslo;

@@ -2,7 +2,7 @@
     <script type="application/javascript" src="/js/validationRegisterForm.js"></script>
 
     <main>
-        <form class="form-register" novalidate onsubmit="return validateForm();">
+        <form class="form-register" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
             <label class="form-main-label">Formularz rejestracyjny</label>
             <div>
                 <label for="imie">Imie:<abbr title="required" aria-label="required">*</abbr></label>

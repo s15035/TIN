@@ -42,6 +42,12 @@ exports.createWizyta = (data) => {
 };
 
 exports.updateWizyta = (wizytaId, data) => {
+    const id_pacjent = data.id_pacjent;
+    const id_lekarz = data.id_lekarz;
+    const objawy = data.objawy;
+    const leczenie = data.leczenie;
+    const data_wizyty = data.data_wizyty;
+
     return Wizyta.update(data, { where: { id_wizyta: wizytaId }
     });
 }

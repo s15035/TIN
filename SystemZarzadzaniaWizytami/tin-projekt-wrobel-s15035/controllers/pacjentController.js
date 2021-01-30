@@ -20,13 +20,26 @@ exports.showRegisterForm = (req, res, next) => {
         pageTitle: 'Formularz rejestracyjny',
         formMode: 'createNew',
         btnLabel: 'Utworz konto',
+        formAction: '/patient/register',
+        navLocation: 'pacjent',
+        validationErrors: []
+    });
+}
+
+exports.showAddPacjentForm = (req, res, next) => {
+    res.render('pages/pacjent/form', {
+        pacjent: {},
+        pageTitle: 'Dodawanie pacjenta',
+        formMode: 'createNew',
+        btnLabel: 'Dodaj pacjenta',
         formAction: '/patient/add',
-        navLocation: 'pacjent'
+        navLocation: 'pacjent',
+        validationErrors: []
     });
 }
 
 exports.showEditPacjentForm = (req, res, next) => {
-    const pacjentId = req.params.pacjentId;
+    const pacjentId = req.params.pacId;
     PacjentRepository.getPacjentById(pacjentId)
         .then(pacjent => {
             res.render('pages/pacjent/form', {
@@ -35,7 +48,8 @@ exports.showEditPacjentForm = (req, res, next) => {
                 pageTitle: 'Edycja pacjenta',
                 btnLabel: 'Edytuj pacjenta',
                 formAction: '/patient/edit',
-                navLocation: 'pacjent'
+                navLocation: 'pacjent',
+                validationErrors: []
             });
         });
 };
@@ -77,10 +91,28 @@ exports.registerPacjent = (req, res, next) => {
         });
 };
 
+exports.addPacjent = (req, res, next) => {
+    const pacjentData = { ...req.body };
+    PacjentRepository.createPacjent(pacjentData)
+        .then(result => {
+            res.redirect('/patient');
+        })
+        .catch(err => {
+            res.render('pages/pacjent/form', {
+                pacjent: pacjentData,
+                pageTitle: 'Dodawanie pacjenta',
+                formMode: 'createNew',
+                btnLabel: 'Dodaj pacjenta',
+                formAction: '/patient/add',
+                navLocation: 'pacjent',
+                validationErrors: err.details
+            });
+        });
+};
 
-/*update nie wywala bledów ale tez nie dodaje rekordow do bazy*/
+
 exports.updatePacjent = (req, res, next) => {
-    const pacjentId = req.body._id;
+    const pacjentId = req.body.id_pacjent;
     const pacjentData = { ...req.body };
     PacjentRepository.updatePacjent(pacjentId, pacjentData)
         .then(result => {
@@ -100,7 +132,7 @@ exports.updatePacjent = (req, res, next) => {
 };
 
 exports.deletePacjent = (req, res, next) => {
-    const pacjentId = req.params.pacjentId;
+    const pacjentId = req.params.pacId;
     PacjentRepository.deletePacjent(pacjentId)
         .then(() => {
             res.redirect('/patient');
