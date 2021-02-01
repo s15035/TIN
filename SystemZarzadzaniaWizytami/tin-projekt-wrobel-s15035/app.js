@@ -22,6 +22,17 @@ app.use(session({
     secret: 'my_secret_password',
     resave: false
 }));
+
+app.use(cookieParser('secret'));
+
+const i18n = require('i18n');
+i18n.configure({
+    locales: ['pl', 'en'], // jêzyki dostêpne w aplikacji. Dla ka¿dego z nich nale¿y utworzyæ osobny s³ownik
+    directory: path.join(__dirname, 'locales'), // œcie¿ka do katalogu, w którym znajduj¹ siê s³owniki
+    objectNotation: true, // umo¿liwia korzstanie z zagnie¿d¿onych kluczy w notacji obiektowej
+    cookie: 'acme-hr-lang', //nazwa cookies, które nasza aplikacja bêdzie wykorzystywaæ do przechowania informacji o jêzyku aktualnie wybranym przez u¿ytkownika
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -41,10 +52,17 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use((req, res, next) => {
+    if(!res.locals.lang) {
+        const currentLang = req.cookies['acme-hr-lang'];
+        res.locals.lang = currentLang;
+    }
+    next();
+});
+
 app.use('/', indexRouter);
 app.use('/doctor', lekarzRouter);
-
-app.use('/patient', authUtil.permitAuthenticatedUser, pacjentRouter);
+app.use('/patient', pacjentRouter);
 app.use('/appointment', authUtil.permitAuthenticatedUser, wizytaRouter);
 
 app.use('/api/doctor', lekarzApiRouter);

@@ -19,15 +19,30 @@
                     <td><%= lekarz.email %></td>
                     <td>
                         <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/doctor/details/<%=lekarz.id_lekarz%>">Szczegoly</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="/doctor/edit/<%=lekarz.id_lekarz%>">Edytuj</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-delete" href="/doctor/delete/<%=lekarz.id_lekarz%>">Usun</a>
-                            </li>
+                            <% if(loggedUser) { %>
+                                <% if(loggedUser.tytul == 'Profesor') { %>
+                                    <li>
+                                        <a class="list-actions-button-details" href="/doctor/details/<%=lekarz.id_lekarz%>">Szczegoly</a>
+                                    </li>
+                                    <li>
+                                        <a class="list-actions-button-edit" href="/doctor/edit/<%=lekarz.id_lekarz%>">Edytuj</a>
+                                    </li>
+                                    <li>
+                                        <a class="list-actions-button-delete" href="/doctor/delete/<%=lekarz.id_lekarz%>">Usun</a>
+                                    </li>
+                                <% } else { %>
+                                    <li>
+                                        <a class="list-actions-button-details" href="/doctor/details/<%=lekarz.id_lekarz%>">Szczegoly</a>
+                                    </li>
+                                    <li>
+                                        <a class="list-actions-button-edit" href="/doctor/edit/<%=lekarz.id_lekarz%>">Edytuj</a>
+                                    </li>
+                                <% } %>
+                            <% } else { %>
+                                <li>
+                                    <a class="list-actions-button-details" href="/doctor/details/<%=lekarz.id_lekarz%>">Szczegoly</a>
+                                </li>
+                            <% } %>
                         </ul>
                     </td>
                 </tr>
@@ -35,7 +50,9 @@
             </tbody>
         </table>
         <div>
-            <a class="button-add" href="/doctor/add">Dodaj nowego lekarza</a>
+            <% if(loggedUser) { %>
+                <a class="button-add" href="/doctor/add">Dodaj nowego lekarza</a>
+            <% } %>
         </div>
     </main>
 

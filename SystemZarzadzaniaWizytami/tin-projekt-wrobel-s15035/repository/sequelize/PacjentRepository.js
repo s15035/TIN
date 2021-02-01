@@ -2,6 +2,8 @@ const Lekarz = require("../../model/sequelize/Lekarz");
 const Pacjent = require("../../model/sequelize/Pacjent");
 const Wizyta = require("../../model/sequelize/Wizyta");
 
+const authUtil = require('../../util/authUtils');
+
 exports.getPacjent = () => {
     return Pacjent.findAll();
 };

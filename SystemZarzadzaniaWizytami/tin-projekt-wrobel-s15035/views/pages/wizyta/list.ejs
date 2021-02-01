@@ -13,11 +13,9 @@
                 </tr>
             </thead>
             <tbody>
-            <% for (let wizyta of wizyty) { %>
-
+            <% if(loggedUser.tytul == "Profesor") { %>
+                <% for (let wizyta of wizyty) { %>
             <tr>
-
-
                 <td><%= wizyta.id_wizyta %></td>
                 <td><%= wizyta.leczenie %></td>
                 <td><%= wizyta.objawy %></td>
@@ -37,6 +35,30 @@
                     </td>
                 </tr>
             <% } %>
+            <% } else %>
+            <% for (let wizyta of wizyty) { %>
+                <tr>
+                <% if(loggedUser.id_lekarz == wizyta.id_lekarz) { %>
+
+                <td><%= wizyta.id_wizyta %></td>
+                <td><%= wizyta.leczenie %></td>
+                <td><%= wizyta.objawy %></td>
+                <td><%= wizyta.data_wizyty %></td>
+                <td>
+                    <ul class="list-actions">
+                        <li>
+                            <a class="list-actions-button-details" href="/appointment/details/<%= wizyta.id_wizyta %>">Szczegoly</a>
+                        </li>
+                        <li>
+                            <a class="list-actions-button-edit" href="/appointment/edit/<%= wizyta.id_wizyta %>">Edytuj</a>
+                        </li>
+                        <li>
+                            <a class="list-actions-button-delete" href="/appointment/delete/<%= wizyta.id_wizyta %>">Usun</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <% }} %>
 
             </tbody>
         </table>

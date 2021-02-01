@@ -34,7 +34,7 @@ const Lekarz = sequelize.define('Lekarz', {
             },
         }
     },
-    specjalizacja: {
+    tytul: {
         type: Sequelize.STRING,
         allowNull: false,
         validate:{
@@ -43,6 +43,19 @@ const Lekarz = sequelize.define('Lekarz', {
             },
             len: {
                 args: [2,60],
+                msg: "Polew powinno zawieraæ od 2 do 60 znaków"
+            },
+        }
+    },
+    specjalizacja: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate:{
+            notEmpty:{
+                msg: "Pole jest wymagane"
+            },
+            len: {
+                args: [5,60],
                 msg: "Polew powinno zawieraæ od 5 do 60 znaków"
             },
         }
