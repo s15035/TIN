@@ -30,7 +30,7 @@ exports.createPacjent = (newPacjentData) => {
         kod_pocztowy: newPacjentData.kod_pocztowy,
         miasto: newPacjentData.miasto,
         ulica: newPacjentData.ulica,
-        haslo: newPacjentData.haslo
+        password: newPacjentData.password
     });
 };
 
@@ -43,7 +43,7 @@ exports.updatePacjent = (pacjentId, pacjentData) => {
     const kod_pocztowy = pacjentData.haslo;
     const miasto = pacjentData.oddzial;
     const ulica = pacjentData.email;
-    const haslo = pacjentData.haslo;
+    const password = pacjentData.password;
 
     return Pacjent.update(pacjentData, { where: { id_pacjent: pacjentId } });
 };
@@ -53,4 +53,4 @@ exports.deletePacjent = (pacjentId) => {
         where: { id_pacjent: pacjentId }
     });
 
-}; 
+};

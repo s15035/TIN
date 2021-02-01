@@ -6,7 +6,7 @@ function validateForm() {
 	const specialisationInput = document.getElementById('specjalizacja');
 	const wardInput = document.getElementById('oddzial');
 	const emailInput = document.getElementById('email');
-	const passwordInput = document.getElementById('haslo');
+	const passwordInput = document.getElementById('password');
 
 	const errorFirstname = document.getElementById('errorImie');
 	const errorLastname = document.getElementById('errorNazwisko');

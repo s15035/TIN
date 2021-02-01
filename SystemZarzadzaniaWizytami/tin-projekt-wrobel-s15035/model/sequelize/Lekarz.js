@@ -77,7 +77,7 @@ const Lekarz = sequelize.define('Lekarz', {
              }
          }
     },
-    haslo: {
+    password: {
         type: Sequelize.STRING,
         allowNull: false,
     }

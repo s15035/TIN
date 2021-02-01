@@ -52,12 +52,12 @@
                     <% } %>
                 </span>
 
-                <label for="haslo">Haslo:<abbr>*</abbr></label>
-                <input type="text" name="haslo" id="haslo" placeholder="2-50 do znaków" value="<%= lekarz.haslo %>"
-                <%= (formMode == 'showDetails') ? 'disabled' : '' %> class="<%= validationErrors.find(e => e.path.includes('haslo')) ? 'error-input' : '' %>"/>
+                <label for="password">Haslo:<abbr>*</abbr></label>
+                <input type="text" name="password" id="password" placeholder="2-50 do znaków" value="<%= lekarz.password %>"
+                <%= (formMode == 'showDetails') ? 'disabled' : '' %> class="<%= validationErrors.find(e => e.path.includes('password')) ? 'error-input' : '' %>"/>
                 <span id="errorHaslo" class="errors-text">
-                    <% if (validationErrors.find(e => e.path.includes('haslo'))) { %>
-                        <%= validationErrors.find(e => e.path.includes('haslo')).message %>
+                    <% if (validationErrors.find(e => e.path.includes('password'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('password')).message %>
                     <% } %>
                 </span>
 

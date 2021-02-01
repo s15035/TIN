@@ -6,11 +6,6 @@ exports.getLekarz = () => {
     return Lekarz.findAll();
 };
 
-/*
-exports.getLekarzById = (lekarzId) => {
-    return Lekarz.findByPk(lekarzId);
-};*/
-
 exports.getLekarzById = (lekarzId) => {
     return Lekarz.findByPk(lekarzId,
         {
@@ -32,7 +27,7 @@ exports.createLekarz = (newLekarzData) => {
         specjalizacja: newLekarzData.specjalizacja,
         oddzial: newLekarzData.oddzial,
         email: newLekarzData.email,
-        haslo: newLekarzData.haslo
+        password: newLekarzData.password
     });
 };
 
@@ -42,7 +37,7 @@ exports.updateLekarz = (lekarzId, lekarzData) => {
     const specjalizacja = lekarzData.specjalizacja;
     const oddzial = lekarzData.oddzial;
     const email = lekarzData.email;
-    const haslo = lekarzData.haslo;
+    const password = lekarzData.password;
 
     return Lekarz.update(lekarzData, { where: { id_lekarz: lekarzId } });
 };
@@ -52,4 +47,10 @@ exports.deleteLekarz = (lekarzId) => {
         where: { id_lekarz: lekarzId }
     });
 
-}; 
+};
+
+exports.findByEmail = (email) => {
+    return Lekarz.findOne({
+        where: {email: email}
+    });
+}

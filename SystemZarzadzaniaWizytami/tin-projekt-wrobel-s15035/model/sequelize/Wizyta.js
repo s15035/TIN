@@ -11,10 +11,20 @@ const Wizyta = sequelize.define('Wizyta', {
     id_pacjent: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        validate:{
+            notEmpty:{
+                msg: "Pole jest wymagane"
+            },
+        }
     },
     id_lekarz: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        validate:{
+            notEmpty:{
+                msg: "Pole jest wymagane"
+            },
+        }
     },
     objawy: {
         type: Sequelize.TEXT,

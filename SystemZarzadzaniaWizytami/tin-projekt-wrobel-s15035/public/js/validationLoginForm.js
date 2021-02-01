@@ -2,7 +2,7 @@ function validateForm() {
 	let valid = true;
 
 	const emailInput = document.getElementById('email');
-	const passwordInput = document.getElementById('haslo');
+	const passwordInput = document.getElementById('password');
 
 	const errorEmail = document.getElementById('errorEmail');
 	const errorPassword = document.getElementById('errorHaslo');

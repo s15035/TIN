@@ -9,7 +9,7 @@ function validateForm() {
 	const postcodeInput = document.getElementById('kod_pocztowy');
 	const cityInput = document.getElementById("miasto");
 	const streetInput = document.getElementById('ulica');
-	const passwordInput = document.getElementById('haslo');
+	const passwordInput = document.getElementById('password');
 /*	const password2Input = document.getElementById('haslo2');*/
 
 	const errorFirstName = document.getElementById('errorImie');

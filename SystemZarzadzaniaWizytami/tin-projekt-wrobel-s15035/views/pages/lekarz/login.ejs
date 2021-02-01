@@ -3,19 +3,22 @@
     <script type="application/javascript" src="/js/validationLoginForm.js"></script>
 
     <main>
-        <form class="form-login" novalidate onsubmit="return validateForm();">
+        <% if(!loggedUser) { %>
+        <form class="form-login" method="post" action="/login" novalidate onsubmit="return validateForm();">
             <label class="form-main-label">Strona logowania</label>
+
             <div>
                 <label for="email">Adres e-mail:<abbr title="required" aria-label="required">*</abbr></label>
                 <input type="email" name="email" id="email" />
                 <span id="errorEmail" class="errors-text"></span>
 
-                <label for="haslo">Haslo:<abbr>*</abbr></label>
-                <input type="text" name="haslo" id="haslo" />
+                <label for="password">Haslo:<abbr>*</abbr></label>
+                <input type="text" name="password" id="password" />
                 <span id="errorHaslo" class="errors-text"></span>
 
                 <p id="errorsSummary" class="errors-text"></p>
                 <input class="form-login-button-submit" type="submit" value="Zaloguj się" />
+                <span id="loginErrors"><%= loginError ? loginError : ''%></span>
 
                 <div class="first-time-line">
                     <div>
@@ -24,7 +27,12 @@
                     </div>
                 </div>
             </div>
+
         </form>
+        <% } else { %>
+            <span>Jesteś zalogowany jako: <%=loggedUser.imie + " " + loggedUser.nazwisko%></span>
+            <a href="/logout">Wyloguj się</a>
+            <% } %>
     </main>
 
 <%- include('../../fragments/footer.ejs') %>

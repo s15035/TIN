@@ -4,6 +4,11 @@ const Lekarz = require('../../model/sequelize/Lekarz');
 const Pacjent = require('../../model/sequelize/Pacjent');
 const Wizyta = require('../../model/sequelize/Wizyta');
 
+const authUtil = require('../../util/authUtils');
+const passHash1 = authUtil.hashPassword('1Tescik123');
+const passHash2 = authUtil.hashPassword('2Tescik123');
+const passHash3 = authUtil.hashPassword('3Tescik123');
+
 module.exports = () => {
     Lekarz.hasMany(Wizyta, { as: 'wizyta', foreignKey: { name: 'id_lekarz', allowNull: false }, constraints: true, onDelete: 'CASCADE' });
     Wizyta.belongsTo(Lekarz, { as: 'lekarz', foreignKey: { name: 'id_lekarz', allowNull: false } });
@@ -19,9 +24,9 @@ module.exports = () => {
         .then(pacjent => {
             if (!pacjent || pacjent.length == 0) {
                 return Pacjent.bulkCreate([
-                    { imie: 'Jan', nazwisko: 'Kowalski', pesel: '97001100987', email: 'jan.kowalski@acme.com', telefon: '111222333', kod_pocztowy: '01-010', miasto: 'Warszawa', ulica: 'Wesola', haslo: '1Test123OMG' },
-                    { imie: 'Wiktor', nazwisko: 'Wrobel', pesel: '87001100987', email: 'wiktor.wrobel@acme.com', telefon: '211222333', kod_pocztowy: '01-010', miasto: 'Warszawa', ulica: 'Jasna 12/2', haslo: '2Test123OMG' },
-                    { imie: 'Alina', nazwisko: 'Malina', pesel: '77001100987', email: 'alina.malina@acme.com', telefon: '311222333', kod_pocztowy: '01-230', miasto: 'Radom', ulica: 'Dziwna 13/2', haslo: '3Test123OMG' }
+                    { imie: 'Jan', nazwisko: 'Kowalski', pesel: '97001100987', email: '', telefon: '111222333', kod_pocztowy: '01-010', miasto: 'Warszawa', ulica: 'Wesola', password: passHash1},
+                    { imie: 'Wiktor', nazwisko: 'Wrobel', pesel: '87001100987', email: 'wiktor.wrobel@acme.com', telefon: '211222333', kod_pocztowy: '01-010', miasto: 'Warszawa', ulica: 'Jasna 12/2', password: passHash2 },
+                    { imie: 'Alina', nazwisko: 'Malina', pesel: '77001100987', email: 'alina.malina@acme.com', telefon: '311222333', kod_pocztowy: '01-230', miasto: 'Radom', ulica: 'Dziwna 13/2', password: passHash3 }
                 ])
                     .then(() => {
                         return Pacjent.findAll();
@@ -37,9 +42,9 @@ module.exports = () => {
         .then(lekarz => {
             if (!lekarz || lekarz.length == 0) {
                 return Lekarz.bulkCreate([
-                    { imie: 'Mateusz', nazwisko: 'Tylko', specjalizacja: 'Internista-Kardiolog', oddzial: 'Kardiologiczny', email: 'mateusz.doktor@example.com', haslo: 'JestemDok123' },
-                    { imie: 'Olga', nazwisko: 'Kowalska', specjalizacja: 'Ortopeda', oddzial: 'Chirurgia Urazowo-Ortopedyczna', email: 'olga.doktor@example.com', haslo: 'JestemDoka123' },
-                    { imie: 'Anna', nazwisko: 'Jakas', specjalizacja: 'Pediatra', oddzial: 'Pediatryczny', email: 'anna.doktor@example.com', haslo: 'JestemDoka321' }
+                    { imie: 'Mateusz', nazwisko: 'Tylko', specjalizacja: 'Internista-Kardiolog', oddzial: 'Kardiologiczny', email: 'mateusz.doktor@example.com', password: passHash1 },
+                    { imie: 'Olga', nazwisko: 'Kowalska', specjalizacja: 'Ortopeda', oddzial: 'Chirurgia Urazowo-Ortopedyczna', email: 'olga.doktor@example.com', password: passHash2 },
+                    { imie: 'Anna', nazwisko: 'Jakas', specjalizacja: 'Pediatra', oddzial: 'Pediatryczny', email: 'anna.doktor@example.com', password: passHash3 }
                 ])
                     .then(() => {
                         return Lekarz.findAll();

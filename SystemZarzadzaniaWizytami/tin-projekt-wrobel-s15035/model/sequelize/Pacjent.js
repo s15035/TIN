@@ -117,7 +117,7 @@ const Pacjent = sequelize.define('Pacjent', {
             },
         }
     },
-    haslo: {
+    password: {
         type: Sequelize.STRING,
         allowNull: false,
         validate:{

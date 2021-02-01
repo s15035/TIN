@@ -12,8 +12,21 @@ const wizytaRouter = require('./routes/wizytaRoute');
 const lekarzApiRouter = require('./routes/api/LekarzApiRoute');
 const pacjentApiRouter = require('./routes/api/PacjentApiRoute');
 
+const sequelizeInit = require('./config/sequelize/init');
+
+const session = require('express-session');
 
 var app = express();
+
+app.use(session({
+    secret: 'my_secret_password',
+    resave: false
+}));
+
+sequelizeInit()
+    .catch(err => {
+        console.log(err);
+    });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +37,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req, res, next) => {
+    const loggedUser = req.session.loggedUser;
+    res.locals.loggedUser = loggedUser;
+    if(!res.locals.loginError) {
+        res.locals.loginError = undefined;
+    }
+    next();
+});
+
 
 app.use('/', indexRouter);
 app.use('/doctor', lekarzRouter);
@@ -50,10 +73,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const sequelizeInit = require('./config/sequelize/init');
-sequelizeInit()
-    .catch(err => {
-        console.log(err);
-    });
 
 module.exports = app;
