@@ -4,6 +4,9 @@ const Lekarz = require('../../model/sequelize/Lekarz');
 const Pacjent = require('../../model/sequelize/Pacjent');
 const Wizyta = require('../../model/sequelize/Wizyta');
 
+const authUtil = require('../../util/authUtils');
+const passHash = authUtil.hashPassword('1Tescik123');
+
 module.exports = () => {
     Lekarz.hasMany(Wizyta, { as: 'wizyta', foreignKey: { name: 'id_lekarz', allowNull: false }, constraints: true, onDelete: 'CASCADE' });
     Wizyta.belongsTo(Lekarz, { as: 'lekarz', foreignKey: { name: 'id_lekarz', allowNull: false } });
@@ -37,9 +40,9 @@ module.exports = () => {
         .then(lekarz => {
             if (!lekarz || lekarz.length == 0) {
                 return Lekarz.bulkCreate([
-                    { imie: 'Mateusz', nazwisko: 'Tylko', specjalizacja: 'Internista-Kardiolog', oddzial: 'Kardiologiczny', email: 'mateusz.doktor@example.com', haslo: 'JestemDok123' },
-                    { imie: 'Olga', nazwisko: 'Kowalska', specjalizacja: 'Ortopeda', oddzial: 'Chirurgia Urazowo-Ortopedyczna', email: 'olga.doktor@example.com', haslo: 'JestemDoka123' },
-                    { imie: 'Anna', nazwisko: 'Jakas', specjalizacja: 'Pediatra', oddzial: 'Pediatryczny', email: 'anna.doktor@example.com', haslo: 'JestemDoka321' }
+                    { imie: 'Mateusz', nazwisko: 'Tylko', specjalizacja: 'Internista-Kardiolog', oddzial: 'Kardiologiczny', email: 'mateusz.doktor@example.com', haslo: passHash },
+                    { imie: 'Olga', nazwisko: 'Kowalska', specjalizacja: 'Ortopeda', oddzial: 'Chirurgia Urazowo-Ortopedyczna', email: 'olga.doktor@example.com', haslo: passHash },
+                    { imie: 'Anna', nazwisko: 'Jakas', specjalizacja: 'Pediatra', oddzial: 'Pediatryczny', email: 'anna.doktor@example.com', haslo: passHash }
                 ])
                     .then(() => {
                         return Lekarz.findAll();

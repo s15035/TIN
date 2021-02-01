@@ -15,18 +15,31 @@
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li class="basic-li"><a href="\" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona glowna</a></li>
-                    <li class="basic-li"><a href="\patient" class="<%= navLocation == 'pacjent' ? 'active' : ''%>">Pacjenci</a></li>
-                    <li class="basic-li"><a href="\doctor" class="<%= navLocation == 'lekarz' ? 'active' : ''%>">Lekarze</a></li>
-                    <li class="basic-li"><a href="\appointment" class="<%= navLocation == 'wizyta' ? 'active' : ''%>">Wizyty</a></li>
-                    <li class="language-list">
-                        <div>
-                            <select id="language" class="language-list-option">
-                                <option value="PL">PL</option>
-                                <option value="EN">EN</option>
-                            </select>
-                        </div>
-                    </li>
+                    <% if(loggedUser) { %>
+                        <li class="basic-li"><a href="\" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona glowna</a></li>
+                        <li class="basic-li"><a href="\patient" class="<%= navLocation == 'pacjent' ? 'active' : ''%>">Pacjenci</a></li>
+                        <li class="basic-li"><a href="\doctor" class="<%= navLocation == 'lekarz' ? 'active' : ''%>">Lekarze</a></li>
+                        <li class="basic-li"><a href="\appointment" class="<%= navLocation == 'wizyta' ? 'active' : ''%>">Wizyty</a></li>
+                        <li class="language-list">
+                            <div>
+                                <select id="language" class="language-list-option">
+                                    <option value="PL">PL</option>
+                                    <option value="EN">EN</option>
+                                </select>
+                            </div>
+                        </li>
+                    <% } else { %>
+                        <li class="basic-li"><a href="\" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona glowna</a></li>
+                        <li class="basic-li"><a href="\doctor" class="<%= navLocation == 'lekarz' ? 'active' : ''%>">Lekarze</a></li>
+                        <li class="language-list">
+                            <div>
+                                <select id="language" class="language-list-option">
+                                    <option value="PL">PL</option>
+                                    <option value="EN">EN</option>
+                                </select>
+                            </div>
+                        </li>
+                    <% } %>
                 </ul>
             </nav>
             <div class="social-media-button-menu">
@@ -37,7 +50,7 @@
             </div>
             <nav class="nav2-menu">
                 <ul>
-                    <li><a class="a-login" href="\patient\login">Zaloguj sie</a></li>
+                    <li><a class="a-login" href="\doctor\login">Zaloguj sie</a></li>
                     <li><a class="a-register" href="\patient\register">Utworz nowe konto</a></li>
                 </ul>
             </nav>

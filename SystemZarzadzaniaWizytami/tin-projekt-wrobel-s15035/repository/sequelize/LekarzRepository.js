@@ -52,4 +52,10 @@ exports.deleteLekarz = (lekarzId) => {
         where: { id_lekarz: lekarzId }
     });
 
-}; 
+};
+
+exports.findByEmail = (email) => {
+    return Lekarz.findOne({
+        where: {email: email}
+    });
+}

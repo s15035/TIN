@@ -1,3 +1,5 @@
+const authUtil = require('./util/authUtils');
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -15,6 +17,11 @@ const pacjentApiRouter = require('./routes/api/PacjentApiRoute');
 
 var app = express();
 
+const session = require('express-session');
+app.use(session({
+    secret: 'my_secret_password',
+    resave: false
+}));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -25,10 +32,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {
+    const loggedUser = req.session.loggedUser;
+    res.locals.loggedUser = loggedUser;
+    if(!res.locals.loginError) {
+        res.locals.loginError = undefined;
+    }
+    next();
+});
+
 app.use('/', indexRouter);
 app.use('/doctor', lekarzRouter);
-app.use('/patient', pacjentRouter);
-app.use('/appointment', wizytaRouter);
+
+app.use('/patient', authUtil.permitAuthenticatedUser, pacjentRouter);
+app.use('/appointment', authUtil.permitAuthenticatedUser, wizytaRouter);
 
 app.use('/api/doctor', lekarzApiRouter);
 app.use('/api/patient', pacjentApiRouter);
