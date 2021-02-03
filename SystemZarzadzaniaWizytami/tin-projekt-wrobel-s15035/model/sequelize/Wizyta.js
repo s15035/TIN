@@ -39,7 +39,7 @@ const Wizyta = sequelize.define('Wizyta', {
         }
     },
     data_wizyty: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
         validate:{
             notEmpty:{

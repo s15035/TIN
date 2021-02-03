@@ -15,7 +15,7 @@ module.exports = () => {
 
     let allLekarz, allPacjent;
     return sequelize
-        .sync({ force: false })
+        .sync({ force: true })
         .then(() => {
             return Pacjent.findAll();
         })

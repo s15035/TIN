@@ -24,15 +24,30 @@
                     <td><%= pacjent.telefon %></td>
                     <td>
                         <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/patient/details/<%=pacjent.id_pacjent%>">Szczegoly</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="/patient/edit/<%=pacjent.id_pacjent%>">Edytuj</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-delete" href="/patient/delete/<%=pacjent.id_pacjent%>">Usun</a>
-                            </li>
+                            <% if(loggedUser) { %>
+                                <% if(loggedUser.tytul == 'Profesor') { %>
+                                    <li>
+                                        <a class="list-actions-button-details" href="/patient/details/<%=pacjent.id_pacjent%>">Szczegoly</a>
+                                    </li>
+                                    <li>
+                                        <a class="list-actions-button-edit" href="/patient/edit/<%=pacjent.id_pacjent%>">Edytuj</a>
+                                    </li>
+                                    <li>
+                                        <a class="list-actions-button-delete" href="/patient/delete/<%=pacjent.id_pacjent%>">Usun</a>
+                                    </li>
+                                <% } else { %>
+                                    <li>
+                                        <a class="list-actions-button-details" href="/patient/details/<%=pacjent.id_pacjent%>">Szczegoly</a>
+                                    </li>
+                                    <li>
+                                        <a class="list-actions-button-edit" href="/patient/edit/<%=pacjent.id_pacjent%>">Edytuj</a>
+                                    </li>
+                                <% } %>
+                            <% } else { %>
+                                <li>
+                                    <a class="list-actions-button-details" href="/patient/details/<%=pacjent.id_pacjent%>">Szczegoly</a>
+                                </li>
+                            <% } %>
                         </ul>
                     </td>
                 </tr>
