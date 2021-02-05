@@ -3,6 +3,7 @@ function validateForm() {
 
 	const firstnameInput = document.getElementById("imie");
 	const lastnameInput = document.getElementById('nazwisko');
+	const titleInput = document.getElementById('tytul');
 	const specialisationInput = document.getElementById('specjalizacja');
 	const wardInput = document.getElementById('oddzial');
 	const emailInput = document.getElementById('email');
@@ -10,6 +11,7 @@ function validateForm() {
 
 	const errorFirstname = document.getElementById('errorImie');
 	const errorLastname = document.getElementById('errorNazwisko');
+	const errorTitle = document.getElementById('errorTytul');
 	const errorSpecialisation = document.getElementById('errorSpecjalizacja');
 	const errorWard = document.getElementById('errorOddzial');
 	const errorEmail = document.getElementById('errorEmail');
@@ -17,7 +19,7 @@ function validateForm() {
 
 	const errorsSummary = document.getElementById('errorsSummary');
 
-	resetErrors([firstnameInput, lastnameInput, specialisationInput, wardInput, emailInput, passwordInput], [errorFirstname, errorLastname, errorSpecialisation, errorWard, errorEmail, errorPassword, ], errorsSummary);
+	resetErrors([firstnameInput, lastnameInput, titleInput, specialisationInput, wardInput, emailInput, passwordInput], [errorFirstname, errorLastname, errorTitle, errorSpecialisation, errorWard, errorEmail, errorPassword, ], errorsSummary);
 
 	/*firstname*/
 	if (!checkRequired(firstnameInput.value)) {
@@ -39,6 +41,17 @@ function validateForm() {
 		valid = false;
 		lastnameInput.classList.add("error-input");
 		errorLastname.innerText = "Pole powinno zawieraæ od 2 do 60 znaków";
+	}
+
+	/*title*/
+	if (!checkRequired(titleInput.value)) {
+		valid = false;
+		titleInput.classList.add("error-input");
+		errorTitle.innerText = "Pole jest wymagane";
+	} else if (!checkTextLengthRange(titleInput.value, 2, 60)) {
+		valid = false;
+		titleInput.classList.add("error-input");
+		errorTitle.innerText = "Pole powinno zawieraæ od 2 do 60 znaków";
 	}
 
 	/*Specialisation*/

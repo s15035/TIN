@@ -8,7 +8,7 @@
             <input type="hidden" name="id_pacjent" value="<%= pacjent.id_pacjent %>">
             <div>
                 <label for="imie">Imie:<abbr title="required" aria-label="required">*</abbr></label>
-                <input type="text" name="imie" id="imie" placeholder="2-60 do znaków" value="<%= pacjent.imie %>"
+                <input type="text" name="imie" id="imie" placeholder="2-60 znaków" value="<%= pacjent.imie %>"
                         <%= (formMode == 'showDetails') ? 'disabled' : '' %> class="<%= validationErrors.find(e => e.path.includes('imie')) ? 'error-input' : '' %>"/>
                 <span id="errorImie" class="errors-text">
                     <% if (validationErrors.find(e => e.path.includes('imie'))) { %>
@@ -17,7 +17,7 @@
                 </span>
 
                 <label for="nazwisko">Nazwisko:<abbr>*</abbr></label>
-                <input type="text" name="nazwisko" id="nazwisko" placeholder="2-60 do znaków" value="<%= pacjent.nazwisko %>"
+                <input type="text" name="nazwisko" id="nazwisko" placeholder="2-60 znaków" value="<%= pacjent.nazwisko %>"
                         <%= (formMode == 'showDetails') ? 'disabled' : '' %> class="<%= validationErrors.find(e => e.path.includes('nazwisko')) ? 'error-input' : '' %>"/>
                 <span id="errorNazwisko" class="errors-text">
                     <% if (validationErrors.find(e => e.path.includes('nazwisko'))) { %>
