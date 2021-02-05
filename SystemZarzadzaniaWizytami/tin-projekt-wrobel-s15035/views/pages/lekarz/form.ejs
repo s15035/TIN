@@ -68,7 +68,7 @@
 
                 <% if(loggedUser) { %>
                     <label for="haslo">Haslo:<abbr>*</abbr></label>
-                    <input type="text" name="haslo" id="haslo" placeholder="2-50 do znaków" value="<%= lekarz.haslo %>"
+                    <input type="password" name="haslo" id="haslo" placeholder="2-50 do znaków" value="<%= lekarz.haslo %>"
                     <%= (formMode == 'showDetails') ? 'disabled' : '' %> class="<%= validationErrors.find(e => e.path.includes('haslo')) ? 'error-input' : '' %>"/>
                     <span id="errorHaslo" class="errors-text">
                         <% if (validationErrors.find(e => e.path.includes('haslo'))) { %>
