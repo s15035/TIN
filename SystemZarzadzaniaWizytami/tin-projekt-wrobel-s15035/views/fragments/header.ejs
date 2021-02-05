@@ -50,8 +50,14 @@
             </div>
             <nav class="nav2-menu">
                 <ul>
-                    <li><a class="a-login" href="\doctor\login">Zaloguj sie</a></li>
-                    <li><a class="a-register" href="\patient\register">Utworz nowe konto</a></li>
+                    <% if(loggedUser) { %>
+                        <li><a class="a-login" href="/logout">Wyloguj się</a></li>
+                        <li><a class="a-register" href="\patient\register">Utworz nowe konto</a></li>
+                    <% } else { %>
+                        <li><a class="a-login" href="/doctor/login">Zaloguj się</a></li>
+                        <li><a class="a-register" href="\patient\register">Utworz nowe konto</a></li>
+                    <% } %>
+
                 </ul>
             </nav>
         </div>

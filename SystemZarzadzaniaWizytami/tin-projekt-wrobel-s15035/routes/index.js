@@ -10,6 +10,7 @@ const AuthController = require('../controllers/authController');
 router.post('/login', AuthController.login);
 router.get('/logout', AuthController.logout);
 
-
+const LangController = require('../controllers/LangController');
+router.get('/changeLang/:lang', LangController.changeLang);
 
 module.exports = router;

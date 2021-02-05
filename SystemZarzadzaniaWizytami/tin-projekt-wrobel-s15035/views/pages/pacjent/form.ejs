@@ -94,7 +94,6 @@
                     <a class="form-button-submit" href="/patient/edit/<%= pacjent.id_pacjent %>">Edytuj</a>
                 <% } %>
 
-                <div class="form-buttons">
                     <p id="errorsSummary" class="errors-text"></p>
                     <% if (formMode != 'showDetails') { %>
                     <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
@@ -102,7 +101,6 @@
                     <% } else { %>
                         <a class="form-button-clean" href="/patient">Powrót</a>
                     <% } %>
-                </div>
             </div>
 
 

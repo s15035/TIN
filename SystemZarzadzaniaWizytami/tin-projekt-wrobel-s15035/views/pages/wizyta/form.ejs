@@ -8,7 +8,7 @@
             <input type="hidden" name="id_wizyta" value="<%= wizyta.id_wizyta %>">
             <div>
                 <label for="id_pacjent">ID pacjenta:<abbr title="required" aria-label="required">*</abbr></label>
-                <select id="id_pacjent" name="id_pacjent" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> class="<%= validationErrors.find(e => e.path.includes('id_pacjent')) ? 'error-input' : '' %>" >
+                <select class="docPatDetails" id="id_pacjent" name="id_pacjent" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> class="<%= validationErrors.find(e => e.path.includes('id_pacjent')) ? 'error-input' : '' %>" >
                     <% if (formMode ==  'showDetails' || formMode ==  'edit') { %>
                         <option label="<%= wizyta.pacjent.imie %>"></option>
                         <% if (formMode ==  'edit'){ %>
@@ -30,7 +30,7 @@
                 </span>
 
                 <label for="id_lekarz">ID lekarza:<abbr>*</abbr></label>
-                <select id="id_lekarz" name="id_lekarz" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> class="<%= validationErrors.find(e => e.path.includes('id_lekarz')) ? 'error-input' : '' %>" >
+                <select class="docPatDetails" id="id_lekarz" name="id_lekarz" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> class="<%= validationErrors.find(e => e.path.includes('id_lekarz')) ? 'error-input' : '' %>" >
                     <% if (formMode ==  'showDetails' || formMode ==  'edit') { %>
                         <option label="<%= wizyta.lekarz.imie %>"></option>
                         <% if (formMode ==  'edit'){ %>
@@ -82,7 +82,7 @@
 
                 <% if (formMode == 'showDetails') { %>
                     <div class="form-buttons-submit">
-                        <a href="/appointment/edit/<%= wizyta.id_wizyta %>" >Edytuj</a>
+                        <a class="form-button-submit" href="/appointment/edit/<%= wizyta.id_wizyta %>" >Edytuj</a>
                     </div>
                 <% } %>
 

@@ -50,7 +50,7 @@ main {
 footer {
     background-color: #2f2e2e;
     color: white;
-    display: grid;
+    bottom: 0;
     padding: 0;
     margin: 0;
 }
@@ -241,14 +241,7 @@ nav ul li {
     
 }
 
-.most-popular-item {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    background-image: url("..\images\main1.png");
-    margin: 10px;
-    padding: 10px;
-    color: #ffffff;
-}
+
 
 .most-popular-item label {
     color: black;
@@ -1015,18 +1008,6 @@ footer {
     grid-template-columns: 100%;
 }
 
-.product-info-buttons button {
-    margin-top: 5px;
-    border-radius:10px;
-    border:solid 1px;
-    border-color: none;
-    background-color: hsl(195, 100%, 50%);
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing:1px;
-    color: #ffffff;
-}
-
 .product-info-buttons button:hover {
     background-color: hsl(195, 100%, 60%);
 }
@@ -1139,6 +1120,12 @@ footer {
     padding: 10px;
     margin-left: 15px;
     height: 400px;
+}
+
+.docPatDetails{
+    border-radius: 5px;
+    margin: 5px;
+    border: 1px solid;
 }
 
 
