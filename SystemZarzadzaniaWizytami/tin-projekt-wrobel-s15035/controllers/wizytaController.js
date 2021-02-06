@@ -1,3 +1,5 @@
+let alert = require('alert');
+
 const PacjentRepository = require('../repository/sequelize/PacjentRepository');
 const LekarzRepository = require('../repository/sequelize/LekarzRepository');
 const WizytaRepository = require('../repository/sequelize/WizytaRepository');
@@ -87,6 +89,7 @@ exports.addWizyta = (req, res, next) => {
     const wizytaData = { ...req.body };
     WizytaRepository.createWizyta(wizytaData)
         .then( result => {
+            alert('Dodano wizyte')
             res.redirect('/appointment');
         }).catch(err => {
         let allPacjent;
@@ -119,6 +122,7 @@ exports.updateWizyta = (req, res, next) => {
     const wizytaData = { ...req.body };
     WizytaRepository.updateWizyta(wizytaId, wizytaData)
         .then(result => {
+            alert('Zaktualizowano wizyte')
             res.redirect('/appointment');
         }).catch(err => {
             res.render('pages/wizyta/form', {
@@ -137,6 +141,7 @@ exports.deleteWizyta = (req, res, next) => {
     const wizytaId = req.params.wizId;
     WizytaRepository.deleteWizyta(wizytaId)
         .then(() => {
+            alert('Usuniêto wizyte')
             res.redirect('/appointment');
         });
 };

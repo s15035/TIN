@@ -1,3 +1,5 @@
+let alert = require('alert');
+
 const PacjentRepository = require('../repository/sequelize/PacjentRepository');
 
 exports.showLoginForm = (req, res, next) => {
@@ -76,6 +78,7 @@ exports.registerPacjent = (req, res, next) => {
     const pacjentData = { ...req.body };
     PacjentRepository.createPacjent(pacjentData)
         .then(result => {
+            alert('Zarejestrowano pacjenta')
             res.redirect('/patient');
         })
         .catch(err => {
@@ -95,6 +98,7 @@ exports.addPacjent = (req, res, next) => {
     const pacjentData = { ...req.body };
     PacjentRepository.createPacjent(pacjentData)
         .then(result => {
+            alert('Dodano pacjenta')
             res.redirect('/patient');
         })
         .catch(err => {
@@ -116,6 +120,7 @@ exports.updatePacjent = (req, res, next) => {
     const pacjentData = { ...req.body };
     PacjentRepository.updatePacjent(pacjentId, pacjentData)
         .then(result => {
+            alert('Zaktualizowano dane pacjenta')
             res.redirect('/patient');
         })
         .catch(err => {
@@ -135,6 +140,7 @@ exports.deletePacjent = (req, res, next) => {
     const pacjentId = req.params.pacId;
     PacjentRepository.deletePacjent(pacjentId)
         .then(() => {
+            alert('Usuniêto pacjenta')
             res.redirect('/patient');
         });
 };

@@ -3,6 +3,8 @@
     <script type="application/javascript" src="/js/validationAddDoctorForm.js"></script>
 
     <main>
+
+
         <form class="form-register" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
             <label class="form-main-label"><%= pageTitle %></label>
             <input type="hidden" name="id_lekarz" value="<%= lekarz.id_lekarz %>">

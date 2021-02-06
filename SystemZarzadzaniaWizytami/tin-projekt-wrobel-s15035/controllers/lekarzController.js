@@ -1,4 +1,7 @@
+let alert = require('alert');
+
 const LekarzRepository = require('../repository/sequelize/LekarzRepository');
+
 
 exports.showLoginForm = (req, res, next) => {
     res.render('pages/lekarz/login', { navLocation: 'lekarz'});
@@ -64,6 +67,7 @@ exports.addLekarz = (req, res, next) => {
     const lekarzData = { ...req.body };
     LekarzRepository.createLekarz(lekarzData)
         .then(result => {
+            alert('Dodano lekarza')
             res.redirect('/doctor');
         })
         .catch(err => {
@@ -84,6 +88,7 @@ exports.updateLekarz = (req, res, next) => {
     const lekarzData = { ...req.body };
     LekarzRepository.updateLekarz(lekarzId, lekarzData)
         .then(result => {
+            alert('Zaktualizowano lekarza')
             res.redirect('/doctor');
         })
         .catch(err => {
@@ -103,6 +108,7 @@ exports.deleteLekarz = (req, res, next) => {
     const lekarzId = req.params.lekId;
     LekarzRepository.deleteLekarz(lekarzId)
         .then(() => {
+            alert('Usuniêto lekarza')
             res.redirect('/doctor');
         });
 };
